@@ -61,47 +61,6 @@
   height: 30px;
 }
 
-/* Hero Stylings */
-.hero {
-  width: 60%;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  margin-top: 40px;
-  gap: 30px;
-}
-.hero h1 {
-  font-size: 3rem;
-}
-.hero h4 {
-  font-size: 2rem;
-}
-.hero .heroButtons {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-.hero .heroButtons button {
-  width: 50%;
-  height: 50px;
-  border-radius: 15px;
-  background-color: inherit;
-  border: 3px solid black;
-}
-.hero .heroButtons button:active {
-  background-color: rgb(48, 182, 151);
-  color: white;
-}
-.hero .socialButtons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-.hero .socialButtons img {
-  height: 50px;
-}
-
 .content {
   margin-top: 30px;
   padding: 10px;

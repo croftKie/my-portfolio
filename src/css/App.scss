@@ -63,51 +63,6 @@
     }
 }
 
-/* Hero Stylings */
-
-.hero {
-  width: 60%;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  margin-top: 40px;
-  gap: 30px;
-    h1{
-        font-size: 3rem;
-    }
-    h4{
-        font-size: 2rem;
-    }
-
-  .heroButtons{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    button{
-        width: 50%;
-        height: 50px;
-        border-radius: 15px;
-        background-color: inherit;
-        border: 3px solid black;
-        &:active{
-            background-color: rgb(48, 182, 151);
-            color: white;
-          }
-      }
-  }
-  .socialButtons{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    img{
-        height: 50px;
-    }
-  }
-
-}
-
-
 
 // content styles
 .content {

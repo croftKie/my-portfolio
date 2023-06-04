@@ -7,9 +7,6 @@ class Nav extends Component {
         moduleOpen : false
     }
     render() { 
-        const openModule = ()=>{
-            this.setState({moduleOpen : !this.state.moduleOpen});
-        }
         return ( 
             <div className="nav">
                 <div className="info">
