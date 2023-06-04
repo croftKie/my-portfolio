@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import home from '../assets/home.png';
+import contact from '../assets/contact.png';
+import code from '../assets/code.png';
 
 class Nav extends Component {
 
-    valueCheck = (event)=>{
-        this.props.onModeChange(event.target.textContent)
-    }
-
     render() { 
+        const {onModeChange} = this.props;
         return ( 
             <div className="nav">
                 <div className="name">
@@ -14,9 +14,9 @@ class Nav extends Component {
                     <p>Software Developer</p>
                 </div>
                 <div className="buttons">
-                    <button onClick={this.valueCheck}>Home</button>
-                    <button onClick={this.valueCheck}>Work</button>
-                    <button onClick={this.valueCheck}>Contact</button>
+                    <button onClick={()=>{onModeChange('Home')}}><img src={home} alt="" /></button>
+                    <button onClick={()=>{onModeChange('Work')}}><img src={code} alt="" /></button>
+                    <button onClick={()=>{onModeChange('Contact')}}><img src={contact} alt="" /></button>
                 </div>
             </div>
         );

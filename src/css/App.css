@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Prompt", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+
+/* Nav Stylings */
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+.nav .name {
+  text-align: center;
+}
+.nav .name h3 {
+  font-size: 3.5rem;
+  margin-bottom: 5px;
+  font-family: "Caveat";
+}
+.nav .name p {
+  font-size: 1.25rem;
+}
+.nav .buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  height: 50px;
+  width: 25%;
+  border-radius: 50px;
+  background-color: rgba(203, 231, 240, 0.543);
+}
+.nav .buttons button {
+  background-color: initial;
+  width: 30%;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.nav .buttons button:hover {
+  text-decoration: underline;
+}
+.nav .buttons button:active {
+  background-color: aqua;
+}
+.nav .buttons button img {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+}
+
+/* Hero Stylings */
+.hero {
+  width: 60%;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 40px;
+  gap: 30px;
+}
+.hero h1 {
+  font-size: 3rem;
+}
+.hero h4 {
+  font-size: 2rem;
+}
+.hero .heroButtons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.hero .heroButtons button {
+  width: 50%;
+  height: 50px;
+  border-radius: 15px;
+  background-color: inherit;
+  border: 3px solid black;
+}
+.hero .heroButtons button:active {
+  background-color: rgb(48, 182, 151);
+  color: white;
+}
+.hero .socialButtons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.hero .socialButtons img {
+  height: 50px;
+}
+
+.content {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  justify-self: center;
+}
+.content .card img {
+  border-radius: 25px;
+}
+.content .card img:hover {
+  box-shadow: 0 0 5px 10px purple;
+}
+
+/* Hero Stylings */
+.contact {
+  width: 60%;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 40px;
+  gap: 30px;
+}
+.contact h1 {
+  font-size: 3rem;
+}
+.contact h4 {
+  font-size: 2rem;
+}
+.contact .heroButtons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.contact .heroButtons button {
+  width: 50%;
+  height: 50px;
+  border-radius: 15px;
+  background-color: inherit;
+  border: 3px solid black;
+}
+.contact .heroButtons button:active {
+  background-color: rgb(48, 182, 151);
+  color: white;
+}
+.contact .socialButtons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.contact .socialButtons img {
+  height: 50px;
+}/*# sourceMappingURL=App.css.map */

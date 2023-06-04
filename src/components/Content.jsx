@@ -6,7 +6,12 @@ class Content extends Component {
         projects : [
             {},
             {},
-            {}
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
         ]
     }
 

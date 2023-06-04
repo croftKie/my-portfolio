@@ -3,7 +3,7 @@ import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Content from './components/Content';
 import Contact from './components/Contact';
-import './App.css';
+import './css/App.css'
 
 class App extends Component {
   state = { 
