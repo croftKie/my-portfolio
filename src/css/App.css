@@ -15,52 +15,50 @@
 
 /* Nav Stylings */
 .nav {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 50px;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 10px;
+  width: 50%;
+  justify-self: center;
 }
-.nav .name {
+.nav img {
+  cursor: pointer;
+  height: 30px;
+}
+.nav .info {
+  justify-self: end;
+  border-right: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: end;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100%;
+}
+.nav .info .name {
   text-align: center;
 }
-.nav .name h3 {
+.nav .info .name h3 {
   font-size: 3.5rem;
   margin-bottom: 5px;
+  letter-spacing: 2px;
   font-family: "Caveat";
 }
-.nav .name p {
+.nav .info .name p {
   font-size: 1.25rem;
 }
-.nav .buttons {
+.nav .info .socialButtons {
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  height: 50px;
-  width: 25%;
-  border-radius: 50px;
-  background-color: rgba(203, 231, 240, 0.543);
-}
-.nav .buttons button {
-  background-color: initial;
-  width: 30%;
-  border-radius: 50px;
-  outline: none;
-  border: none;
-  font-size: 1rem;
+  justify-content: center;
+  gap: 30px;
   cursor: pointer;
 }
-.nav .buttons button:hover {
-  text-decoration: underline;
-}
-.nav .buttons button:active {
-  background-color: aqua;
-}
-.nav .buttons button img {
-  height: 50px;
-  width: 50px;
-  padding: 5px;
+.nav .info .socialButtons img {
+  height: 30px;
 }
 
 /* Hero Stylings */
@@ -105,19 +103,38 @@
 }
 
 .content {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 30px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80%;
+  width: 90%;
   justify-self: center;
+  gap: 15px;
+}
+.content .card {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .content .card img {
+  height: 150px;
   border-radius: 25px;
+  border: 4px solid black;
 }
-.content .card img:hover {
-  box-shadow: 0 0 5px 10px purple;
+.content .card h3 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.content .card h3 img {
+  height: 20px;
+  border: none;
+}
+.content .card-expanded {
+  height: 200px;
 }
 
 /* Hero Stylings */
@@ -151,12 +168,4 @@
 .contact .heroButtons button:active {
   background-color: rgb(48, 182, 151);
   color: white;
-}
-.contact .socialButtons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-.contact .socialButtons img {
-  height: 50px;
 }/*# sourceMappingURL=App.css.map */
