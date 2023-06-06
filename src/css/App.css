@@ -124,17 +124,59 @@
   height: 150px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: all 0.2s;
-  transition-timing-function: ease-in-out;
-}
-.content .card:hover {
-  transform: scale(103%);
+  align-items: left;
 }
 .content .card img {
   height: 150px;
   border-radius: 25px;
   border: 4px solid black;
+  transition: all 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.content .card img:hover {
+  transform: scale(103%);
+}
+.content .card .sourceCodeModule {
+  margin-left: 5%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.content .card .sourceCodeModule img {
+  height: 20px;
+  border: none;
+}
+.content .card .sourceCodeModule a {
+  text-decoration: none;
+}
+.content .card .sourceCodeModule h4 {
+  color: black;
+}
+.content .card .sourceCodeModule .rightImg {
+  height: 15px;
+}
+.content .card .sourceCodeModule .rightImgAnimated {
+  animation: bounce 1s infinite;
+  animation-timing-function: linear;
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2.5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(2.5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Hero Stylings */
