@@ -9,13 +9,8 @@ class Content extends Component {
     state = {
         projects : [
             {img : surfer, live_link : 'https://croftkie.github.io/surf-report-live/', source_link : 'https://github.com/croftKie/surf-report-live'},
-            {img : clapper, live_link : 'https://croftkie.github.io/surf-report-live/', source_link : 'https://github.com/croftKie/movie-buddy'},
+            {img : clapper, live_link : 'https://croftkie.github.io/clapperboard/', source_link : 'https://github.com/croftKie/movie-buddy'},
             {img : cliTool, live_link : 'https://www.npmjs.com/package/quick-react-app-builder/', source_link : 'https://www.npmjs.com/package/quick-react-app-builder?activeTab=code'},
-            {img : cardGraphic, live_link : 'https://croftkie.github.io/surf-report-live/', source_link : 'https://github.com/croftKie/surf-report-live'},
-            {img : cardGraphic, live_link : 'https://croftkie.github.io/surf-report-live/', source_link : 'https://github.com/croftKie/surf-report-live'},
-            {img : cardGraphic, live_link : 'https://croftkie.github.io/surf-report-live/', source_link : 'https://github.com/croftKie/surf-report-live'},
-            {img : cardGraphic, live_link : 'https://croftkie.github.io/surf-report-live/', source_link : 'https://github.com/croftKie/surf-report-live'},
-            {img : cardGraphic, live_link : 'https://croftkie.github.io/surf-report-live/', source_link : 'https://github.com/croftKie/surf-report-live'}
         ]
     }
 
