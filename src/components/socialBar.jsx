@@ -10,7 +10,7 @@ class SocialBar extends Component {
         <div className='socialButtons'>
             <img src={gh} alt="" />
             <img src={li} alt="" />
-            <img src={em} alt="" />
+            <img onClick={()=>{this.props.showToastMessage('Get in touch - kiecroft@proton.me')}} src={em} alt="" />
         </div>
         );
     }

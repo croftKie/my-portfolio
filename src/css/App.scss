@@ -12,7 +12,36 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr 4fr;
+  animation: colorchange 120s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
 }
+
+@keyframes colorchange {
+    0% {
+      background: #ebebeb;
+    }
+    17% {
+      background: #defffa;
+    }
+    34% {
+      background: #d3f5fd;
+    }
+    51% {
+      background: #d0d9ff;
+    }
+    68% {
+      background: #d3f5fd;
+    }
+    85% {
+      background: #defffa;
+    }
+    100% {
+      background: #ebebeb;
+    }
+  }
+
 
 
 /* Nav Stylings */
@@ -58,8 +87,28 @@
             cursor: pointer;
             img{
                 height: 30px;
+                &:hover{
+                    transform: scale(110%);
+                    transition: all 0.15s;
+                }
             }
         }
+    }
+    .about{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .skills{
+        display: flex;
+        gap: 15px;
+        img{
+          height: 30px;
+          &:hover{
+            transform: scale(110%);
+            transition: all 0.15s;
+          }
+        }
+      }
     }
 }
 
@@ -73,30 +122,23 @@
   justify-content: center;
   width: 90%;
   justify-self: center;
-  gap: 15px;
+  gap: 35px;
   .card{
-    width: 400px;
-    height: 200px;
+    width: max-content;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.2s;
+    transition-timing-function: ease-in-out;
+    &:hover{
+        transform: scale(103%);
+    }
     img{
         height: 150px;
         border-radius: 25px;
         border: 4px solid black;
     }
-    h3{
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        img{
-            height: 20px;
-            border: none;
-        }
-    }
-  }
-  .card-expanded{
-    height: 200px;
   }
 }
 

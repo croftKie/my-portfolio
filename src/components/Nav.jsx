@@ -14,9 +14,9 @@ class Nav extends Component {
                         <h3>Kieran Croft</h3>
                         <p>Fullstack Software Developer</p>
                     </div>
-                    <SocialBar />
+                    <SocialBar showToastMessage={this.props.showToastMessage}/>
                 </div>
-                <About />
+                <About showToastMessage={this.props.showToastMessage}/>
             </div>
         );
     }
