@@ -8,8 +8,8 @@ class SocialBar extends Component {
     render() { 
         return (
         <div className='socialButtons'>
-            <img src={gh} alt="" />
-            <img src={li} alt="" />
+            <a target='_blank' href="https://github.com/croftKie"><img src={gh} alt="" /></a>
+            <a target='_blank' href="https://www.linkedin.com/in/kieran-croft/"><img src={li} alt="" /></a>
             <img onClick={()=>{this.props.showToastMessage('Get in touch - kiecroft@proton.me')}} src={em} alt="" />
         </div>
         );

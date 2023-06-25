@@ -6,19 +6,19 @@ import git from '../assets/git.png';
 import reduximg from '../assets/redux.png';
 import sass from '../assets/sass.png';
 import nodejs from '../assets/node.png';
-import csharp from '../assets/csharp.png';
+import python from '../assets/python.png';
 
 
 class About extends Component {
     state = {
-        js : 'ES6 Javascript for responsive front-end',
+        js : 'ES6 Javascript for responsive front-end development',
         react : 'Class based and functional React SPA development using Redux and Router',
         redux : 'Redux for complex state management of web-based SPA',
-        node : 'NodeJS development for scalable back-end development and proxy server development',
+        node : 'NodeJS for scalable back-end development and proxy server development',
         sass : 'Multi-page website and SPA styling using detailed variable management',
         ts : 'Strongly-typed JS for improved development speed and error management',
-        git : 'Managed single and collaborative projects through GitHub and version control through Git',
-        csharp : 'Created CLI tooling using core C# programming concepts'
+        git : 'Managed solo and collaborative projects through GitHub and version control through Git',
+        csharp : 'Created Data Visualisations and Analysis using Python'
 
     }
     render() { 
@@ -35,7 +35,7 @@ class About extends Component {
                     <img onClick={()=>{showToastMessage(this.state.sass)}} src={sass} alt="" />
                     <img onClick={()=>{showToastMessage(this.state.ts)}} src={ts} alt="" />
                     <img onClick={()=>{showToastMessage(this.state.git)}} src={git} alt="" />
-                    <img onClick={()=>{showToastMessage(this.state.csharp)}} src={csharp} alt="" />
+                    <img onClick={()=>{showToastMessage(this.state.csharp)}} src={python} alt="" />
                 </div>
             </div>
         );
