@@ -6,7 +6,7 @@ import cliTool from "../assets/cli-tool.png";
 import overload from "../assets/bug_overload.png";
 import splt from "../assets/splt.png";
 import js from "../assets/js.png";
-import ts from "../assets/ts.png";
+// import ts from "../assets/ts.png";
 import reactimg from "../assets/react.png";
 import git from "../assets/git.png";
 import reduximg from "../assets/redux.png";
@@ -60,7 +60,7 @@ class Content extends Component {
         source_link: "https://github.com/croftKie/bug-overload",
         app_name: "Bug Overload | PyGame",
         app_description:
-          "A remix of the classic space invaders video game, control a developer trying to squash as many bugs as possible!",
+          "A remix of the classic space invaders video game, control a developer trying to squash as many bugs as possible! Beat those bugs!",
         tech_used: [python, git],
       },
     ],
