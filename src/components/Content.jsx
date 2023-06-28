@@ -3,6 +3,7 @@ import Card from "./Card";
 import surfer from "../assets/surfer.png";
 import clapper from "../assets/clapperboard.png";
 import cliTool from "../assets/cli-tool.png";
+import overload from "../assets/bug_overload.png";
 import splt from "../assets/splt.png";
 import js from "../assets/js.png";
 import ts from "../assets/ts.png";
@@ -52,6 +53,15 @@ class Content extends Component {
         app_description:
           "Tip calculator module created in vanilla JavaScript providing ability to easily split bills at group meals.",
         tech_used: [js, sass, git],
+      },
+      {
+        img: overload,
+        live_link: "https://github.com/croftKie/bug-overload",
+        source_link: "https://github.com/croftKie/bug-overload",
+        app_name: "Bug Overload | PyGame",
+        app_description:
+          "A remix of the classic space invaders video game, control a developer trying to squash as many bugs as possible!",
+        tech_used: [python, git],
       },
     ],
   };
