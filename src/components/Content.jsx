@@ -66,8 +66,8 @@ class Content extends Component {
       },
       {
         img: be_a_coder,
-        live_link: "https://github.com/croftKie/bug-overload",
-        source_link: "https://github.com/croftKie/bug-overload",
+        live_link: "https://croftkie.github.io/be-a-coder/",
+        source_link: "https://github.com/croftKie/be-a-coder",
         app_name: "Be-A-Coder | MatterJS",
         app_description:
           "A set of physics simulations to illustrate the life of a programmer building a piece of software. Uses MatterJS for 2d physics simulations.",
