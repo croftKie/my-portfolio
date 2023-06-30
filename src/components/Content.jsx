@@ -13,6 +13,7 @@ import reduximg from "../assets/redux.png";
 import sass from "../assets/sass.png";
 import nodejs from "../assets/node.png";
 import python from "../assets/python.png";
+import be_a_coder from "../assets/be-a-coder-img.png";
 
 class Content extends Component {
   state = {
@@ -62,6 +63,15 @@ class Content extends Component {
         app_description:
           "A remix of the classic space invaders video game, control a developer trying to squash as many bugs as possible! Beat those bugs!",
         tech_used: [python, git],
+      },
+      {
+        img: be_a_coder,
+        live_link: "https://github.com/croftKie/bug-overload",
+        source_link: "https://github.com/croftKie/bug-overload",
+        app_name: "Be-A-Coder | MatterJS",
+        app_description:
+          "A set of physics simulations to illustrate the life of a programmer building a piece of software. Uses MatterJS for 2d physics simulations.",
+        tech_used: [js, git],
       },
     ],
   };
