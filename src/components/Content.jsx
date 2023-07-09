@@ -57,12 +57,12 @@ class Content extends Component {
       },
       {
         img: overload,
-        live_link: "https://github.com/croftKie/bug-overload",
+        live_link: "https://croftkie.github.io/bug-overload/",
         source_link: "https://github.com/croftKie/bug-overload",
         app_name: "Bug Overload | PyGame",
         app_description:
-          "A remix of the classic space invaders video game, control a developer trying to squash as many bugs as possible! Beat those bugs!",
-        tech_used: [python, git],
+          "A little coder therapy for squashing bugs! Built using KaboomJS for game development and Bootstrap framework for website UI",
+        tech_used: [js, sass, git],
       },
       {
         img: be_a_coder,
