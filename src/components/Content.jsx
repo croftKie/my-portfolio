@@ -13,6 +13,7 @@ import reduximg from "../assets/redux.png";
 import sass from "../assets/sass.png";
 import nodejs from "../assets/node.png";
 import be_a_coder from "../assets/be-a-coder-img.png";
+import codeventure from "../assets/codeventure.png";
 
 class Content extends Component {
   state = {
@@ -38,6 +39,16 @@ class Content extends Component {
         type: "project",
       },
       {
+        img: codeventure,
+        live_link: "https://croftkie.github.io/coding-adventure/",
+        source_link: "https://github.com/croftKie/coding-adventure",
+        app_name: "CodeVenture - Coding Puzzles",
+        app_description:
+          "Learn to think like a coder with this retro game, built using React, and Redux, using custom connections to a third party game library, KaboomJS",
+        tech_used: [reactimg, reduximg, sass, js],
+        type: "project",
+      },
+      {
         img: cliTool,
         live_link: "https://www.npmjs.com/package/quick-react-app-builder/",
         source_link:
@@ -47,16 +58,6 @@ class Content extends Component {
           "CLI Tool for quickly spinning up a React app with Github and Redux Toolkit functionality - over 1000 downloads on NPM",
         tech_used: [js, nodejs, git],
         type: "package",
-      },
-      {
-        img: splt,
-        live_link: "https://croftkie.github.io/tip-calculator-FM/",
-        source_link: "https://github.com/croftKie/tip-calculator-FM",
-        app_name: "SPLT | Tip Calculator",
-        app_description:
-          "Tip calculator module created in vanilla JavaScript providing ability to easily split bills at group meals.",
-        tech_used: [js, sass, git],
-        type: "project",
       },
       {
         img: overload,
@@ -79,11 +80,11 @@ class Content extends Component {
         type: "project",
       },
     ],
-    mode: 0,
   };
 
   render() {
-    if (this.state.mode === 0) {
+    console.log(this.props.currentMode);
+    if (this.props.currentMode === "all") {
       return (
         <div className="content">
           {this.state.projects.map((item) => {
@@ -102,7 +103,7 @@ class Content extends Component {
       );
     }
 
-    if (this.state.mode === 1) {
+    if (this.props.currentMode === "projects") {
       return (
         <div className="content">
           {this.state.projects.map((item) => {
@@ -123,7 +124,7 @@ class Content extends Component {
       );
     }
 
-    if (this.state.mode === 2) {
+    if (this.props.currentMode === "packages") {
       return (
         <div className="content">
           {this.state.projects.map((item) => {

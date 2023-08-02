@@ -10,7 +10,7 @@
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 2fr 1fr 8fr;
   animation: colorchange 120s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -106,6 +106,33 @@
 .nav .about .skills img:hover {
   transform: scale(110%);
   transition: all 0.15s;
+}
+
+.lower-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.lower-nav button {
+  width: 10%;
+  height: 50%;
+  background-color: white;
+  outline: none;
+  border: 3px solid black;
+  border-radius: 12.5px;
+  font-family: "Caveat", sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.lower-nav button:hover {
+  transform: scale(103%);
+}
+.lower-nav .active {
+  background-color: rgb(23, 23, 23);
+  color: white;
 }
 
 .content {

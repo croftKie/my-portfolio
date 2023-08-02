@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './components/Nav';
 import Content from './components/Content';
+import LowerNav from './components/LowerNav';
 import './css/App.css'
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,11 +9,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 class App extends Component {
   state = { 
-    currentPage : "Home",
+    currentMode : "all",
    } 
 
   onModeChange = (mode)=>{
-    this.setState({currentPage : mode});
+    this.setState({currentMode : mode});
   }
 
   showToastMessage = (text) => {
@@ -20,12 +21,11 @@ class App extends Component {
   };
 
   render() { 
-    const currentPage = this.state.currentPage;
-
     return (
       <>
-        <Nav showToastMessage={this.showToastMessage} onModeChange={this.onModeChange}/>
-        <Content />
+        <Nav showToastMessage={this.showToastMessage}/>
+        <LowerNav onModeChange={this.onModeChange}/>
+        <Content currentMode={this.state.currentMode}/>
         <ToastContainer />
       </>
     );
