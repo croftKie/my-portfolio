@@ -3,10 +3,7 @@ import Card from "./Card";
 import surfer from "../assets/surfer.png";
 import clapper from "../assets/clapperboard.png";
 import cliTool from "../assets/cli-tool.png";
-import overload from "../assets/bug_overload.png";
-import splt from "../assets/splt.png";
 import js from "../assets/js.png";
-// import ts from "../assets/ts.png";
 import reactimg from "../assets/react.png";
 import git from "../assets/git.png";
 import reduximg from "../assets/redux.png";
@@ -14,6 +11,8 @@ import sass from "../assets/sass.png";
 import nodejs from "../assets/node.png";
 import be_a_coder from "../assets/be-a-coder-img.png";
 import codeventure from "../assets/codeventure.png";
+import pathAnimation from "../assets/path-animatior.png";
+import linkingPark from "../assets/LinkingPark.png";
 
 class Content extends Component {
   state = {
@@ -60,12 +59,23 @@ class Content extends Component {
         type: "package",
       },
       {
-        img: overload,
-        live_link: "https://croftkie.github.io/bug-overload/",
-        source_link: "https://github.com/croftKie/bug-overload",
-        app_name: "Bug Overload | PyGame",
+        img: pathAnimation,
+        live_link: "https://www.npmjs.com/package/directional-path-animator",
+        source_link:
+          "https://www.npmjs.com/package/directional-path-animator?activeTab=code",
+        app_name: "Four Directional Path Animator",
         app_description:
-          "A little coder therapy for squashing bugs! Built using KaboomJS for game development and Bootstrap framework for website UI",
+          "JavaScript package extending GSAP capabilite to create controlled four directional animation with collision detection and event emition.",
+        tech_used: [js, nodejs, git],
+        type: "package",
+      },
+      {
+        img: linkingPark,
+        live_link: "https://croftkie.github.io/linking-park/",
+        source_link: "https://github.com/croftKie/linking-park",
+        app_name: "LinkingPark | Tab Manager",
+        app_description:
+          "A productivity app created in Vanilla JavaScript, with Bootstrap framework for styling and KaboomJS implementation for interactive element",
         tech_used: [js, sass, git],
         type: "project",
       },
