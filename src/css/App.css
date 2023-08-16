@@ -10,7 +10,7 @@
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 300px 100px 1fr;
+  grid-template-rows: 200px 100px 1fr;
   animation: colorchange 120s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -44,11 +44,9 @@
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
   padding: 10px;
-  width: 50%;
+  width: 90%;
   justify-self: center;
 }
 .nav img {
@@ -56,15 +54,16 @@
   height: 30px;
 }
 .nav .info {
-  justify-self: end;
+  justify-self: flex-end;
   border-right: 4px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: end;
+  justify-content: flex-start;
+  align-items: flex-end;
   padding-left: 20px;
   padding-right: 20px;
-  height: 100%;
+  height: -moz-min-content;
+  height: min-content;
 }
 .nav .info .name {
   text-align: center;
@@ -77,6 +76,7 @@
 }
 .nav .info .name p {
   font-size: 1.25rem;
+  margin-bottom: 5px;
 }
 .nav .info .socialButtons {
   display: flex;
@@ -96,27 +96,38 @@
   flex-direction: column;
   gap: 10px;
 }
-.nav .about .skills {
-  display: flex;
-  gap: 15px;
-}
-.nav .about .skills img {
-  height: 30px;
-}
-.nav .about .skills img:hover {
-  transform: scale(110%);
-  transition: all 0.15s;
+.nav .about p:last-of-type {
+  width: 70%;
 }
 
 .lower-nav {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
-.lower-nav button {
+.lower-nav .skills {
+  display: flex;
+  gap: 15px;
+}
+.lower-nav .skills img {
+  height: 30px;
+}
+.lower-nav .skills img:hover {
+  transform: scale(110%);
+  transition: all 0.15s;
+}
+.lower-nav .buttons {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1%;
+}
+.lower-nav .buttons button {
   width: 15%;
-  height: 50%;
+  height: 100%;
   background-color: white;
   outline: none;
   border: 3px solid black;
@@ -127,10 +138,10 @@
   transition: transform 0.2s;
   transition-timing-function: ease-in-out;
 }
-.lower-nav button:hover {
+.lower-nav .buttons button:hover {
   transform: scale(103%);
 }
-.lower-nav .active {
+.lower-nav .buttons .active {
   background-color: rgb(23, 23, 23);
   color: white;
 }
@@ -299,11 +310,9 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: none;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
+    gap: 20px;
     padding: 10px;
-    width: 100%;
+    width: 99%;
     justify-self: center;
   }
   .nav img {
@@ -311,15 +320,16 @@
     height: 30px;
   }
   .nav .info {
-    justify-self: end;
+    justify-self: flex-end;
     border-right: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     padding-left: 20px;
     padding-right: 20px;
-    height: 100%;
+    height: -moz-min-content;
+    height: min-content;
   }
   .nav .info .name {
     text-align: center;
@@ -332,6 +342,7 @@
   }
   .nav .info .name p {
     font-size: 1.25rem;
+    margin-bottom: 5px;
   }
   .nav .info .socialButtons {
     display: flex;
@@ -347,51 +358,55 @@
     transition: all 0.15s;
   }
   .nav .about {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 10px;
   }
-  .nav .about p {
-    text-align: center;
-    font-size: 1.3rem;
-  }
   .nav .about p:last-of-type {
-    display: none;
-  }
-  .nav .about .skills {
-    display: flex;
-    gap: 15px;
-  }
-  .nav .about .skills img {
-    height: 30px;
-  }
-  .nav .about .skills img:hover {
-    transform: scale(110%);
-    transition: all 0.15s;
+    width: 70%;
   }
   .lower-nav {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
   }
-  .lower-nav button {
+  .lower-nav .skills {
+    display: flex;
+    gap: 15px;
+  }
+  .lower-nav .skills img {
+    height: 30px;
+  }
+  .lower-nav .skills img:hover {
+    transform: scale(110%);
+    transition: all 0.15s;
+  }
+  .lower-nav .buttons {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+  }
+  .lower-nav .buttons button {
     width: 30%;
-    height: 50%;
+    height: 100%;
     background-color: white;
     outline: none;
     border: 3px solid black;
     border-radius: 12.5px;
     font-family: "Caveat", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     transition: transform 0.2s;
     transition-timing-function: ease-in-out;
   }
-  .lower-nav button:hover {
+  .lower-nav .buttons button:hover {
     transform: scale(103%);
   }
-  .lower-nav .active {
+  .lower-nav .buttons .active {
     background-color: rgb(23, 23, 23);
     color: white;
   }

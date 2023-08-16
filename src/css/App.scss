@@ -11,7 +11,7 @@
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 300px 100px 1fr;
+  grid-template-rows: 200px 100px 1fr;
   animation: colorchange 120s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -46,26 +46,24 @@
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
   padding: 10px;
-  width: 50%;
+  width: 90%;
   justify-self: center;
   img {
     cursor: pointer;
     height: 30px;
   }
   .info {
-    justify-self: end;
+    justify-self: flex-end;
     border-right: 4px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: end;
+    justify-content: flex-start;
+    align-items: flex-end;
     padding-left: 20px;
     padding-right: 20px;
-    height: 100%;
+    height: min-content;
     .name {
       text-align: center;
       h3 {
@@ -76,6 +74,7 @@
       }
       p {
         font-size: 1.25rem;
+        margin-bottom: 5px;
       }
     }
     .socialButtons {
@@ -96,15 +95,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    .skills {
-      display: flex;
-      gap: 15px;
-      img {
-        height: 30px;
-        &:hover {
-          transform: scale(110%);
-          transition: all 0.15s;
-        }
+    p {
+      &:last-of-type {
+        width: 70%;
       }
     }
   }
@@ -112,28 +105,47 @@
 
 .lower-nav {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  button {
-    width: 15%;
-    height: 50%;
-    background-color: white;
-    outline: none;
-    border: 3px solid black;
-    border-radius: 12.5px;
-    font-family: "Caveat", sans-serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-    transition-timing-function: ease-in-out;
-    &:hover {
-      transform: scale(103%);
+  .skills {
+    display: flex;
+    gap: 15px;
+    img {
+      height: 30px;
+      &:hover {
+        transform: scale(110%);
+        transition: all 0.15s;
+      }
     }
   }
-  .active {
-    background-color: rgb(23, 23, 23);
-    color: white;
+  .buttons {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    button {
+      width: 15%;
+      height: 100%;
+      background-color: white;
+      outline: none;
+      border: 3px solid black;
+      border-radius: 12.5px;
+      font-family: "Caveat", sans-serif;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        transform: scale(103%);
+      }
+    }
+    .active {
+      background-color: rgb(23, 23, 23);
+      color: white;
+    }
   }
 }
 
@@ -309,26 +321,24 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: none;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
+    gap: 20px;
     padding: 10px;
-    width: 100%;
+    width: 99%;
     justify-self: center;
     img {
       cursor: pointer;
       height: 30px;
     }
     .info {
-      justify-self: end;
+      justify-self: flex-end;
       border-right: none;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-end;
       padding-left: 20px;
       padding-right: 20px;
-      height: 100%;
+      height: min-content;
       .name {
         text-align: center;
         h3 {
@@ -339,6 +349,7 @@
         }
         p {
           font-size: 1.25rem;
+          margin-bottom: 5px;
         }
       }
       .socialButtons {
@@ -356,27 +367,12 @@
       }
     }
     .about {
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 10px;
       p {
-        text-align: center;
-        font-size: 1.3rem;
-      }
-      p {
         &:last-of-type {
-          display: none;
-        }
-      }
-      .skills {
-        display: flex;
-        gap: 15px;
-        img {
-          height: 30px;
-          &:hover {
-            transform: scale(110%);
-            transition: all 0.15s;
-          }
+          width: 70%;
         }
       }
     }
@@ -384,28 +380,47 @@
 
   .lower-nav {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    button {
-      width: 30%;
-      height: 50%;
-      background-color: white;
-      outline: none;
-      border: 3px solid black;
-      border-radius: 12.5px;
-      font-family: "Caveat", sans-serif;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: transform 0.2s;
-      transition-timing-function: ease-in-out;
-      &:hover {
-        transform: scale(103%);
+    gap: 30px;
+    .skills {
+      display: flex;
+      gap: 15px;
+      img {
+        height: 30px;
+        &:hover {
+          transform: scale(110%);
+          transition: all 0.15s;
+        }
       }
     }
-    .active {
-      background-color: rgb(23, 23, 23);
-      color: white;
+    .buttons {
+      width: 90%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1%;
+      button {
+        width: 30%;
+        height: 100%;
+        background-color: white;
+        outline: none;
+        border: 3px solid black;
+        border-radius: 12.5px;
+        font-family: "Caveat", sans-serif;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.2s;
+        transition-timing-function: ease-in-out;
+        &:hover {
+          transform: scale(103%);
+        }
+      }
+      .active {
+        background-color: rgb(23, 23, 23);
+        color: white;
+      }
     }
   }
 
