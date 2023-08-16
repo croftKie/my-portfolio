@@ -11,7 +11,7 @@
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 2fr 1fr 8fr;
+  grid-template-rows: 300px 100px 1fr;
   animation: colorchange 120s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -45,7 +45,7 @@
 /* Nav Stylings */
 .nav {
   display: grid;
-  grid-template-columns: 1fr 1fr 50px;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -110,13 +110,13 @@
   }
 }
 
-.lower-nav{
+.lower-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  button{
-    width: 10%;
+  button {
+    width: 15%;
     height: 50%;
     background-color: white;
     outline: none;
@@ -131,7 +131,7 @@
       transform: scale(103%);
     }
   }
-  .active{
+  .active {
     background-color: rgb(23, 23, 23);
     color: white;
   }
@@ -281,6 +281,278 @@
       &:active {
         background-color: rgb(48, 182, 151);
         color: white;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1452px) {
+  .lower-nav {
+    button {
+      width: 20%;
+    }
+  }
+}
+
+@media only screen and (max-width: 964px) {
+  .lower-nav {
+    button {
+      width: 25%;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  /* Nav Stylings */
+  .nav {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 10px;
+    width: 100%;
+    justify-self: center;
+    img {
+      cursor: pointer;
+      height: 30px;
+    }
+    .info {
+      justify-self: end;
+      border-right: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 100%;
+      .name {
+        text-align: center;
+        h3 {
+          font-size: 3.5rem;
+          margin-bottom: 5px;
+          letter-spacing: 2px;
+          font-family: "Caveat";
+        }
+        p {
+          font-size: 1.25rem;
+        }
+      }
+      .socialButtons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        cursor: pointer;
+        img {
+          height: 30px;
+          &:hover {
+            transform: scale(110%);
+            transition: all 0.15s;
+          }
+        }
+      }
+    }
+    .about {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      p {
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      p {
+        &:last-of-type {
+          display: none;
+        }
+      }
+      .skills {
+        display: flex;
+        gap: 15px;
+        img {
+          height: 30px;
+          &:hover {
+            transform: scale(110%);
+            transition: all 0.15s;
+          }
+        }
+      }
+    }
+  }
+
+  .lower-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    button {
+      width: 30%;
+      height: 50%;
+      background-color: white;
+      outline: none;
+      border: 3px solid black;
+      border-radius: 12.5px;
+      font-family: "Caveat", sans-serif;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        transform: scale(103%);
+      }
+    }
+    .active {
+      background-color: rgb(23, 23, 23);
+      color: white;
+    }
+  }
+
+  // content styles
+  .content {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    height: max-content;
+    justify-self: center;
+    gap: 0;
+    .card {
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      overflow-y: hidden;
+      padding: 10px;
+      .card-nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      img {
+        height: 110px;
+        border-radius: 15px;
+        border: 4px solid black;
+        transition: all 0.2s;
+        transition-timing-function: ease-in-out;
+        &:hover {
+          transform: scale(103%);
+        }
+      }
+      .sourceCodeModule {
+        margin-left: 5%;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        img {
+          height: 20px;
+          border: none;
+        }
+        a {
+          text-decoration: none;
+        }
+        h4 {
+          color: black;
+        }
+        .rightImg {
+          height: 15px;
+        }
+        .rightImgAnimated {
+          animation: bounce 1s infinite;
+          animation-timing-function: linear;
+        }
+        @keyframes bounce {
+          0% {
+            transform: translateX(0);
+          }
+          25% {
+            transform: translateX(2.5px);
+          }
+          50% {
+            transform: translateX(5px);
+          }
+          75% {
+            transform: translateX(2.5px);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+      }
+      .info {
+        margin-right: 5%;
+        display: flex;
+        align-items: center;
+        img {
+          height: 20px;
+          border: none;
+          cursor: pointer;
+        }
+      }
+      .info-card {
+        position: relative;
+        width: 100%;
+        background-color: white;
+        border-radius: 20px;
+        border: 3px solid black;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transform: translateY(210px);
+        .tech-images {
+          display: flex;
+          justify-content: space-around;
+          img {
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+          }
+        }
+      }
+      .hide {
+        display: none;
+      }
+    }
+  }
+
+  /* Hero Stylings */
+
+  .contact {
+    width: 60%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 40px;
+    gap: 30px;
+    h1 {
+      font-size: 3rem;
+    }
+    h4 {
+      font-size: 2rem;
+    }
+
+    .heroButtons {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      button {
+        width: 50%;
+        height: 50px;
+        border-radius: 15px;
+        background-color: inherit;
+        border: 3px solid black;
+        &:active {
+          background-color: rgb(48, 182, 151);
+          color: white;
+        }
       }
     }
   }

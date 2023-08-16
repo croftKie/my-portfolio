@@ -93,7 +93,6 @@ class Content extends Component {
   };
 
   render() {
-    console.log(this.props.currentMode);
     if (this.props.currentMode === "all") {
       return (
         <div className="content">
