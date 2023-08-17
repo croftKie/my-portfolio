@@ -17,7 +17,7 @@ class LowerNav extends Component {
   render() {
     return (
       <div className="lower-nav">
-        <About />
+        <About showToastMessage={this.props.showToastMessage}/>
         <div ref={this.buttonRef} className="buttons">
           <button
             className="active"

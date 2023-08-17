@@ -9,10 +9,12 @@ import git from "../assets/git.png";
 import reduximg from "../assets/redux.png";
 import sass from "../assets/sass.png";
 import nodejs from "../assets/node.png";
+import python from "../assets/python.png"
 import be_a_coder from "../assets/be-a-coder-img.png";
 import codeventure from "../assets/codeventure.png";
 import pathAnimation from "../assets/path-animatior.png";
 import linkingPark from "../assets/LinkingPark.png";
+
 
 class Content extends Component {
   state = {
@@ -29,12 +31,12 @@ class Content extends Component {
       },
       {
         img: clapper,
-        live_link: "https://croftkie.github.io/clapperboard/",
-        source_link: "https://github.com/croftKie/movie-buddy",
-        app_name: "Clapperboard | Movie Search",
+        live_link: "https://github.com/croftKie/secura-cam",
+        source_link: "https://github.com/croftKie/secura-cam",
+        app_name: "Secura-cam | Hacker Catcher",
         app_description:
-          "Algorithm-free movie search database created to provide solve a use case of finding new movies unrelated to previously watched content.",
-        tech_used: [js, sass, reactimg, reduximg],
+          "Secure your computer. Uses key-press monitoring and webcam access to capture evidence of anyone tampering with your computer.",
+        tech_used: [python, git],
         type: "project",
       },
       {

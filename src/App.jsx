@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <>
         <Nav showToastMessage={this.showToastMessage}/>
-        <LowerNav onModeChange={this.onModeChange}/>
+        <LowerNav showToastMessage={this.showToastMessage} onModeChange={this.onModeChange}/>
         <Content currentMode={this.state.currentMode}/>
         <ToastContainer />
       </>

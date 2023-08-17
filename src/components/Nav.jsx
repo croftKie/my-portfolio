@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import About from "./About";
 import SocialBar from "./socialBar";
-
 class Nav extends Component {
   state = {
     moduleOpen: false,
