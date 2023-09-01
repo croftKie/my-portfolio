@@ -9,12 +9,12 @@ import git from "../assets/git.png";
 import reduximg from "../assets/redux.png";
 import sass from "../assets/sass.png";
 import nodejs from "../assets/node.png";
-import python from "../assets/python.png"
+import python from "../assets/python.png";
 import be_a_coder from "../assets/be-a-coder-img.png";
 import codeventure from "../assets/codeventure.png";
 import pathAnimation from "../assets/path-animatior.png";
 import linkingPark from "../assets/LinkingPark.png";
-
+import croftest from "../assets/croftest.png";
 
 class Content extends Component {
   state = {
@@ -30,16 +30,6 @@ class Content extends Component {
         type: "project",
       },
       {
-        img: clapper,
-        live_link: "https://github.com/croftKie/secura-cam",
-        source_link: "https://github.com/croftKie/secura-cam",
-        app_name: "Secura-cam | Hacker Catcher",
-        app_description:
-          "Secure your computer. Uses key-press monitoring and webcam access to capture evidence of anyone tampering with your computer.",
-        tech_used: [python, git],
-        type: "project",
-      },
-      {
         img: codeventure,
         live_link: "https://croftkie.github.io/coding-adventure/",
         source_link: "https://github.com/croftKie/coding-adventure",
@@ -47,6 +37,16 @@ class Content extends Component {
         app_description:
           "Learn to think like a coder with this retro game, built using React, and Redux, using custom connections to a third party game library, KaboomJS",
         tech_used: [reactimg, reduximg, sass, js],
+        type: "project",
+      },
+      {
+        img: linkingPark,
+        live_link: "https://croftkie.github.io/linking-park/",
+        source_link: "https://github.com/croftKie/linking-park",
+        app_name: "LinkingPark | Tab Manager",
+        app_description:
+          "A productivity app created in Vanilla JavaScript, with Bootstrap framework for styling and KaboomJS implementation for interactive element",
+        tech_used: [js, sass, git],
         type: "project",
       },
       {
@@ -72,14 +72,14 @@ class Content extends Component {
         type: "package",
       },
       {
-        img: linkingPark,
-        live_link: "https://croftkie.github.io/linking-park/",
-        source_link: "https://github.com/croftKie/linking-park",
-        app_name: "LinkingPark | Tab Manager",
+        img: croftest,
+        live_link: "https://www.npmjs.com/package/croftest",
+        source_link: "https://www.npmjs.com/package/croftest?activeTab=code",
+        app_name: "Croftest | In-browser Unit Testing",
         app_description:
-          "A productivity app created in Vanilla JavaScript, with Bootstrap framework for styling and KaboomJS implementation for interactive element",
-        tech_used: [js, sass, git],
-        type: "project",
+          "A stripped down unit testing framework for testing of in-browser code evaluation.",
+        tech_used: [js, nodejs, git],
+        type: "package",
       },
       {
         img: be_a_coder,
@@ -91,70 +91,91 @@ class Content extends Component {
         tech_used: [js, git],
         type: "project",
       },
+      {
+        img: clapper,
+        live_link: "https://github.com/croftKie/secura-cam",
+        source_link: "https://github.com/croftKie/secura-cam",
+        app_name: "Secura-cam | Hacker Catcher",
+        app_description:
+          "Secure your computer. Uses key-press monitoring and webcam access to capture evidence of anyone tampering with your computer.",
+        tech_used: [python, git],
+        type: "project",
+      },
     ],
   };
 
   render() {
-    if (this.props.currentMode === "all") {
-      return (
-        <div className="content">
-          {this.state.projects.map((item) => {
-            return (
-              <Card
-                source_link={item.source_link}
-                live_link={item.live_link}
-                img={item.img}
-                app_name={item.app_name}
-                app_description={item.app_description}
-                tech_used={item.tech_used}
-              />
-            );
-          })}
-        </div>
-      );
-    }
+    const mobileCheck = window.innerWidth;
 
-    if (this.props.currentMode === "projects") {
-      return (
-        <div className="content">
-          {this.state.projects.map((item) => {
-            if (item.type === "project") {
-              return (
-                <Card
-                  source_link={item.source_link}
-                  live_link={item.live_link}
-                  img={item.img}
-                  app_name={item.app_name}
-                  app_description={item.app_description}
-                  tech_used={item.tech_used}
-                />
-              );
-            }
-          })}
+    const desktop = (
+      <>
+        {" "}
+        <div className="left">
+          <div className="title">
+            <h4>Projects</h4>
+          </div>
+          <div className="cards">
+            {this.state.projects.map((item) => {
+              if (item.type === "project") {
+                return (
+                  <Card
+                    source_link={item.source_link}
+                    live_link={item.live_link}
+                    img={item.img}
+                    app_name={item.app_name}
+                    app_description={item.app_description}
+                    tech_used={item.tech_used}
+                  />
+                );
+              }
+            })}
+          </div>
         </div>
-      );
-    }
+        <div className="right">
+          <div className="cards">
+            {this.state.projects.map((item) => {
+              if (item.type === "package") {
+                return (
+                  <Card
+                    source_link={item.source_link}
+                    live_link={item.live_link}
+                    img={item.img}
+                    app_name={item.app_name}
+                    app_description={item.app_description}
+                    tech_used={item.tech_used}
+                  />
+                );
+              }
+            })}
+          </div>
+          <div className="title">
+            <h4>Packages</h4>
+          </div>
+        </div>
+      </>
+    );
 
-    if (this.props.currentMode === "packages") {
-      return (
-        <div className="content">
-          {this.state.projects.map((item) => {
-            if (item.type === "package") {
-              return (
-                <Card
-                  source_link={item.source_link}
-                  live_link={item.live_link}
-                  img={item.img}
-                  app_name={item.app_name}
-                  app_description={item.app_description}
-                  tech_used={item.tech_used}
-                />
-              );
-            }
-          })}
-        </div>
-      );
-    }
+    const mobile = (
+      <>
+        {this.state.projects.map((item) => {
+          return (
+            <Card
+              source_link={item.source_link}
+              live_link={item.live_link}
+              img={item.img}
+              app_name={item.app_name}
+              app_description={item.app_description}
+              tech_used={item.tech_used}
+            />
+          );
+        })}
+      </>
+    );
+
+    console.log(mobileCheck);
+    return (
+      <div className="content">{mobileCheck > 900 ? desktop : mobile}</div>
+    );
   }
 }
 

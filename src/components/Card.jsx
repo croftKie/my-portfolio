@@ -25,7 +25,7 @@ class Card extends Component {
       if (this.state.infoBox) {
         const tl = gsap.timeline();
         tl.to(this.cardRef.current, {
-          height: 200,
+          height: 170,
           ease: CustomEase.create("custom", customEase),
           duration: 1,
         });
@@ -36,7 +36,7 @@ class Card extends Component {
         });
         setTimeout(() => {
           this.infoRef.current.classList.add("hide");
-        }, 500);
+        }, 700);
         this.setState({ infoBox: !this.state.infoBox });
       } else {
         this.infoRef.current.classList.remove("hide");
@@ -60,7 +60,7 @@ class Card extends Component {
       <>
         <div ref={this.cardRef} className="card">
           <a href={this.props.live_link} target="_blank">
-            <img src={this.props.img} alt="" />
+            <img className="image-card" src={this.props.img} alt="" />
           </a>
           <div className="card-nav">
             <div

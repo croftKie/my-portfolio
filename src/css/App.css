@@ -8,158 +8,227 @@
 }
 
 #root {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 200px 100px 1fr;
+  height: 100vh;
+  display: flex;
   animation: colorchange 120s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
+  cursor: url("../assets/hand-point.png");
 }
 
-@keyframes colorchange {
-  0% {
-    background: #ebebeb;
-  }
-  17% {
-    background: #defffa;
-  }
-  34% {
-    background: #d3f5fd;
-  }
-  51% {
-    background: #d0d9ff;
-  }
-  68% {
-    background: #d3f5fd;
-  }
-  85% {
-    background: #defffa;
-  }
-  100% {
-    background: #ebebeb;
-  }
-}
 /* Nav Stylings */
-.nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 10px;
-  width: 90%;
+.header {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
   justify-self: center;
+  background-color: rgb(30, 30, 30);
+  box-shadow: 5px 5px 15px 1px rgba(30, 30, 30, 0.4);
+  color: white;
 }
-.nav img {
+.header img {
   cursor: pointer;
   height: 30px;
 }
-.nav .info {
-  justify-self: flex-end;
-  border-right: 4px solid black;
+.header .info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: -moz-min-content;
-  height: min-content;
+  align-items: flex-start;
+  color: rgb(30, 30, 30);
+  gap: 5px;
 }
-.nav .info .name {
-  text-align: center;
+.header .info .name {
+  width: 100%;
+  padding-left: 1%;
+  background-color: rgb(232, 232, 232);
+  transform: skewY(-7deg);
 }
-.nav .info .name h3 {
+.header .info .name h3 {
   font-size: 3.5rem;
   margin-bottom: 5px;
   letter-spacing: 2px;
   font-family: "Caveat";
 }
-.nav .info .name p {
+.header .info .name p {
   font-size: 1.25rem;
   margin-bottom: 5px;
 }
-.nav .info .socialButtons {
+.header .info .lower {
+  width: 100%;
+  transform: skewY(-7deg);
+  display: flex;
+  justify-content: space-between;
+}
+.header .info .lower .job {
+  background-color: rgb(232, 232, 232);
+  border-radius: 0 10px 10px 0;
+  width: 60%;
+  padding-left: 1%;
+}
+.header .info .lower .job h3 {
+  font-size: 2rem;
+  font-family: "Caveat";
+}
+.header .info .lower .socialButtons {
+  background-color: rgb(232, 232, 232);
+  border-radius: 10px 0 0 10px;
+  width: 30%;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
+  gap: 15%;
   cursor: pointer;
 }
-.nav .info .socialButtons img {
+.header .info .lower .socialButtons a {
   height: 30px;
 }
-.nav .info .socialButtons img:hover {
+.header .info .lower .socialButtons img {
+  height: 30px;
+}
+.header .info .lower .socialButtons img:hover {
   transform: scale(110%);
   transition: all 0.15s;
 }
-.nav .about {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.nav .about p:last-of-type {
-  width: 70%;
-}
-
-.lower-nav {
+.header .about {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding-left: 5%;
+}
+.header .about h4 {
+  font-size: 1.5rem;
+  align-self: flex-start;
+}
+.header .about .info-content {
+  display: flex;
+  align-items: flex-end;
+  height: 80%;
+}
+.header .about .info-content .text {
+  flex: 1;
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.header .about .info-content img {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+.header .skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-left: 5%;
+}
+.header .skills h4 {
+  font-size: 1.5rem;
+  align-self: flex-start;
+}
+.header .skills .images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+.header .skills .images .nodeImg,
+.header .skills .images .gitImg {
+  filter: invert(98%) sepia(3%) saturate(996%) hue-rotate(180deg) brightness(114%) contrast(100%);
+}
+
+.nav {
+  flex: 3;
+  display: flex;
   gap: 30px;
 }
-.lower-nav .skills {
-  display: flex;
-  gap: 15px;
-}
-.lower-nav .skills img {
-  height: 30px;
-}
-.lower-nav .skills img:hover {
-  transform: scale(110%);
-  transition: all 0.15s;
-}
-.lower-nav .buttons {
+.nav .buttons {
   width: 90%;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   justify-content: center;
   gap: 1%;
 }
-.lower-nav .buttons button {
-  width: 15%;
-  height: 100%;
-  background-color: white;
+.nav .buttons button {
+  background: none;
   outline: none;
-  border: 3px solid black;
+  border: none;
   border-radius: 12.5px;
   font-family: "Caveat", sans-serif;
   font-size: 1.5rem;
   cursor: pointer;
   transition: transform 0.2s;
   transition-timing-function: ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 95%;
+  padding: 0 5% 0 5%;
 }
-.lower-nav .buttons button:hover {
+.nav .buttons button:hover {
   transform: scale(103%);
 }
-.lower-nav .buttons .active {
+.nav .buttons button img {
+  height: 30px;
+}
+.nav .buttons .active {
   background-color: rgb(23, 23, 23);
   color: white;
 }
+.nav .buttons .active img {
+  filter: invert(98%) sepia(3%) saturate(996%) hue-rotate(180deg) brightness(114%) contrast(100%);
+}
 
 .content {
-  margin-top: 30px;
-  padding: 10px;
+  flex: 10;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   width: 90%;
-  height: -moz-max-content;
-  height: max-content;
+  height: 100vh;
   justify-self: center;
   gap: 35px;
 }
-.content .card {
-  height: 200px;
+.content .left {
+  flex: 1;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  height: 100vh;
+  gap: 10px;
+}
+.content .left .title {
+  grid-row: 1/2;
+  height: 20%;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  justify-self: center;
+  width: 90%;
+  height: 100%;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.content .left .cards {
+  grid-row: 2/3;
+  overflow-y: scroll;
+}
+.content .left .cards .card {
+  height: 170px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,44 +236,44 @@
   overflow-y: hidden;
   padding: 10px;
 }
-.content .card .card-nav {
-  width: 100%;
+.content .left .cards .card .card-nav {
+  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.content .card img {
-  height: 150px;
+.content .left .cards .card img {
+  height: 120px;
   border-radius: 25px;
-  border: 4px solid black;
+  border: 2px solid black;
   transition: all 0.2s;
   transition-timing-function: ease-in-out;
 }
-.content .card img:hover {
+.content .left .cards .card img:hover {
   transform: scale(103%);
 }
-.content .card .sourceCodeModule {
+.content .left .cards .card .sourceCodeModule {
   margin-left: 5%;
-  width: 40%;
+  width: 70%;
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
 }
-.content .card .sourceCodeModule img {
+.content .left .cards .card .sourceCodeModule img {
   height: 20px;
   border: none;
 }
-.content .card .sourceCodeModule a {
+.content .left .cards .card .sourceCodeModule a {
   text-decoration: none;
 }
-.content .card .sourceCodeModule h4 {
+.content .left .cards .card .sourceCodeModule h4 {
   color: black;
 }
-.content .card .sourceCodeModule .rightImg {
+.content .left .cards .card .sourceCodeModule .rightImg {
   height: 15px;
 }
-.content .card .sourceCodeModule .rightImgAnimated {
+.content .left .cards .card .sourceCodeModule .rightImgAnimated {
   animation: bounce 1s infinite;
   animation-timing-function: linear;
 }
@@ -225,19 +294,19 @@
     transform: translateX(0);
   }
 }
-.content .card .info {
+.content .left .cards .card .info {
   margin-right: 5%;
   display: flex;
   align-items: center;
 }
-.content .card .info img {
+.content .left .cards .card .info img {
   height: 20px;
   border: none;
   cursor: pointer;
 }
-.content .card .info-card {
+.content .left .cards .card .info-card {
   position: relative;
-  width: 380px;
+  width: 75%;
   background-color: white;
   border-radius: 20px;
   border: 3px solid black;
@@ -247,182 +316,301 @@
   gap: 10px;
   transform: translateY(210px);
 }
-.content .card .info-card .tech-images {
+.content .left .cards .card .info-card .tech-images {
   display: flex;
   justify-content: space-around;
 }
-.content .card .info-card .tech-images img {
+.content .left .cards .card .info-card .tech-images img {
   height: 30px;
   border: none;
   border-radius: 5px;
 }
-.content .card .hide {
+.content .left .cards .card .hide {
+  display: none;
+}
+.content .right {
+  flex: 1;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+  height: 100vh;
+  gap: 10px;
+}
+.content .right .title {
+  grid-row: 2/3;
+  height: 20%;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  justify-self: center;
+  width: 90%;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.content .right .cards {
+  grid-row: 1/2;
+  align-self: end;
+  overflow-y: scroll;
+}
+.content .right .cards .card {
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  overflow-y: hidden;
+  padding: 10px;
+}
+.content .right .cards .card .card-nav {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .right .cards .card img {
+  height: 120px;
+  border-radius: 25px;
+  border: 2px solid black;
+  transition: all 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.content .right .cards .card img:hover {
+  transform: scale(103%);
+}
+.content .right .cards .card .sourceCodeModule {
+  margin-left: 5%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.content .right .cards .card .sourceCodeModule img {
+  height: 20px;
+  border: none;
+}
+.content .right .cards .card .sourceCodeModule a {
+  text-decoration: none;
+}
+.content .right .cards .card .sourceCodeModule h4 {
+  color: black;
+}
+.content .right .cards .card .sourceCodeModule .rightImg {
+  height: 15px;
+}
+.content .right .cards .card .sourceCodeModule .rightImgAnimated {
+  animation: bounce 1s infinite;
+  animation-timing-function: linear;
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2.5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(2.5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.content .right .cards .card .info {
+  margin-right: 5%;
+  display: flex;
+  align-items: center;
+}
+.content .right .cards .card .info img {
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+.content .right .cards .card .info-card {
+  position: relative;
+  width: 75%;
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translateY(210px);
+}
+.content .right .cards .card .info-card .tech-images {
+  display: flex;
+  justify-content: space-around;
+}
+.content .right .cards .card .info-card .tech-images img {
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+.content .right .cards .card .hide {
   display: none;
 }
 
-/* Hero Stylings */
-.contact {
-  width: 60%;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  margin-top: 40px;
-  gap: 30px;
-}
-.contact h1 {
-  font-size: 3rem;
-}
-.contact h4 {
-  font-size: 2rem;
-}
-.contact .heroButtons {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-.contact .heroButtons button {
-  width: 50%;
-  height: 50px;
-  border-radius: 15px;
-  background-color: inherit;
-  border: 3px solid black;
-}
-.contact .heroButtons button:active {
-  background-color: rgb(48, 182, 151);
-  color: white;
+.mouseCursor {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background-color: rgba(185, 197, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.25s;
 }
 
-@media only screen and (max-width: 1452px) {
-  .lower-nav button {
-    width: 20%;
-  }
+.mouseCursorFast {
+  transition: all 0.01s;
 }
+
 @media only screen and (max-width: 964px) {
-  .lower-nav button {
-    width: 25%;
-    font-size: 1.25rem;
+  #root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: colorchange 120s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    cursor: url("../assets/hand-point.png");
   }
-}
-@media only screen and (max-width: 500px) {
   /* Nav Stylings */
-  .nav {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: none;
-    gap: 20px;
-    padding: 10px;
-    width: 99%;
+  .header {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
     justify-self: center;
+    background-color: rgb(30, 30, 30);
+    box-shadow: 5px 5px 15px 1px rgba(30, 30, 30, 0.4);
+    color: white;
   }
-  .nav img {
+  .header img {
     cursor: pointer;
     height: 30px;
   }
-  .nav .info {
-    justify-self: flex-end;
-    border-right: none;
+  .header .info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: -moz-min-content;
-    height: min-content;
+    align-items: flex-start;
+    color: rgb(30, 30, 30);
+    gap: 5px;
   }
-  .nav .info .name {
-    text-align: center;
+  .header .info .name {
+    width: 100%;
+    padding-left: 1%;
+    background-color: rgb(232, 232, 232);
+    transform: skewY(-7deg);
   }
-  .nav .info .name h3 {
+  .header .info .name h3 {
     font-size: 3.5rem;
     margin-bottom: 5px;
     letter-spacing: 2px;
     font-family: "Caveat";
   }
-  .nav .info .name p {
+  .header .info .name p {
     font-size: 1.25rem;
     margin-bottom: 5px;
   }
-  .nav .info .socialButtons {
+  .header .info .lower {
+    width: 100%;
+    transform: skewY(-7deg);
+    display: flex;
+    justify-content: space-between;
+  }
+  .header .info .lower .job {
+    background-color: rgb(232, 232, 232);
+    border-radius: 0 10px 10px 0;
+    width: 55%;
+    padding-left: 1%;
+  }
+  .header .info .lower .job h3 {
+    font-size: 1.5rem;
+    font-family: "Caveat";
+  }
+  .header .info .lower .socialButtons {
+    background-color: rgb(232, 232, 232);
+    border-radius: 10px 0 0 10px;
+    width: 40%;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 15%;
     cursor: pointer;
   }
-  .nav .info .socialButtons img {
-    height: 30px;
+  .header .info .lower .socialButtons a {
+    height: 25px;
   }
-  .nav .info .socialButtons img:hover {
+  .header .info .lower .socialButtons img {
+    height: 25px;
+  }
+  .header .info .lower .socialButtons img:hover {
     transform: scale(110%);
     transition: all 0.15s;
   }
-  .nav .about {
+  .header .about {
     display: none;
+  }
+  .header .about h4 {
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  .header .about .info-content {
+    display: flex;
+    align-items: flex-end;
+    height: 80%;
+  }
+  .header .about .info-content .text {
+    flex: 1;
+    text-align: end;
+    display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .nav .about p:last-of-type {
-    width: 70%;
-  }
-  .lower-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
-  .lower-nav .skills {
-    display: flex;
-    gap: 15px;
-  }
-  .lower-nav .skills img {
-    height: 30px;
-  }
-  .lower-nav .skills img:hover {
-    transform: scale(110%);
-    transition: all 0.15s;
-  }
-  .lower-nav .buttons {
-    width: 90%;
+  .header .about .info-content img {
+    flex: 1;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 1%;
+    width: 100%;
   }
-  .lower-nav .buttons button {
-    width: 30%;
-    height: 100%;
-    background-color: white;
-    outline: none;
-    border: 3px solid black;
-    border-radius: 12.5px;
-    font-family: "Caveat", sans-serif;
+  .header .skills {
+    display: none;
+  }
+  .header .skills h4 {
     font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-    transition-timing-function: ease-in-out;
+    align-self: flex-start;
   }
-  .lower-nav .buttons button:hover {
-    transform: scale(103%);
+  .header .skills .images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
   }
-  .lower-nav .buttons .active {
-    background-color: rgb(23, 23, 23);
-    color: white;
+  .header .skills .images .nodeImg,
+  .header .skills .images .gitImg {
+    filter: invert(98%) sepia(3%) saturate(996%) hue-rotate(180deg) brightness(114%) contrast(100%);
   }
   .content {
-    margin-top: 30px;
+    flex: 10;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 90%;
-    height: -moz-max-content;
-    height: max-content;
+    margin-top: 20px;
+    width: 100%;
+    height: 100vh;
     justify-self: center;
-    gap: 0;
+    gap: 35px;
   }
   .content .card {
-    height: 200px;
+    height: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -431,15 +619,15 @@
     padding: 10px;
   }
   .content .card .card-nav {
-    width: 100%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .content .card img {
-    height: 110px;
-    border-radius: 15px;
-    border: 4px solid black;
+    height: 120px;
+    border-radius: 25px;
+    border: 2px solid black;
     transition: all 0.2s;
     transition-timing-function: ease-in-out;
   }
@@ -448,7 +636,7 @@
   }
   .content .card .sourceCodeModule {
     margin-left: 5%;
-    width: 60%;
+    width: 70%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -500,7 +688,7 @@
   }
   .content .card .info-card {
     position: relative;
-    width: 100%;
+    width: 75%;
     background-color: white;
     border-radius: 20px;
     border: 3px solid black;
@@ -522,36 +710,39 @@
   .content .card .hide {
     display: none;
   }
-  /* Hero Stylings */
-  .contact {
-    width: 60%;
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-top: 40px;
-    gap: 30px;
+  .mouseCursor {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: rgba(185, 197, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.25s;
   }
-  .contact h1 {
-    font-size: 3rem;
+  .mouseCursorFast {
+    transition: all 0.01s;
   }
-  .contact h4 {
-    font-size: 2rem;
+}
+@keyframes colorchange {
+  0% {
+    background: #ebebeb;
   }
-  .contact .heroButtons {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  17% {
+    background: #defffa;
   }
-  .contact .heroButtons button {
-    width: 50%;
-    height: 50px;
-    border-radius: 15px;
-    background-color: inherit;
-    border: 3px solid black;
+  34% {
+    background: #d3f5fd;
   }
-  .contact .heroButtons button:active {
-    background-color: rgb(48, 182, 151);
-    color: white;
+  51% {
+    background: #d0d9ff;
+  }
+  68% {
+    background: #d3f5fd;
+  }
+  85% {
+    background: #defffa;
+  }
+  100% {
+    background: #ebebeb;
   }
 }/*# sourceMappingURL=App.css.map */

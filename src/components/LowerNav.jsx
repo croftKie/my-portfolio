@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import About from "./About";
+import all from "../assets/project (1).png";
+import projects from "../assets/project (3).png";
+import npm from "../assets/project (2).png";
 
 class LowerNav extends Component {
   state = {
@@ -16,8 +18,7 @@ class LowerNav extends Component {
 
   render() {
     return (
-      <div className="lower-nav">
-        <About showToastMessage={this.props.showToastMessage}/>
+      <div className="nav">
         <div ref={this.buttonRef} className="buttons">
           <button
             className="active"
@@ -25,21 +26,24 @@ class LowerNav extends Component {
               this.changeStyle(0), this.props.onModeChange("all");
             }}
           >
-            All Builds
+            <img src={all} alt="" />
+            All
           </button>
           <button
             onClick={(e) => {
               this.changeStyle(1), this.props.onModeChange("projects");
             }}
           >
-            Projects Only
+            <img src={projects} alt="" />
+            Projects
           </button>
           <button
             onClick={(e) => {
               this.changeStyle(2), this.props.onModeChange("packages");
             }}
           >
-            Published Packages
+            <img src={npm} alt="" />
+            Packages
           </button>
         </div>
       </div>

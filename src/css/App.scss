@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -9,63 +8,43 @@
 }
 
 #root {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 200px 100px 1fr;
+  height: 100vh;
+  display: flex;
+  // grid-template-rows: 150px 100px 1fr;
   animation: colorchange 120s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
-}
-
-@keyframes colorchange {
-  0% {
-    background: #ebebeb;
-  }
-  17% {
-    background: #defffa;
-  }
-  34% {
-    background: #d3f5fd;
-  }
-  51% {
-    background: #d0d9ff;
-  }
-  68% {
-    background: #d3f5fd;
-  }
-  85% {
-    background: #defffa;
-  }
-  100% {
-    background: #ebebeb;
-  }
+  cursor: url("../assets/hand-point.png");
 }
 
 /* Nav Stylings */
-.nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 10px;
-  width: 90%;
+.header {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
   justify-self: center;
+  background-color: rgb(30, 30, 30);
+  box-shadow: 5px 5px 15px 1px rgba(30, 30, 30, 0.4);
+  color: white;
   img {
     cursor: pointer;
     height: 30px;
   }
   .info {
-    justify-self: flex-end;
-    border-right: 4px solid black;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: min-content;
+    align-items: flex-start;
+    color: rgb(30, 30, 30);
+    gap: 5px;
     .name {
-      text-align: center;
+      width: 100%;
+      padding-left: 1%;
+      background-color: rgb(232, 232, 232);
+      transform: skewY(-7deg);
       h3 {
         font-size: 3.5rem;
         margin-bottom: 5px;
@@ -77,270 +56,461 @@
         margin-bottom: 5px;
       }
     }
-    .socialButtons {
+    .lower {
+      width: 100%;
+      transform: skewY(-7deg);
       display: flex;
-      justify-content: center;
-      gap: 30px;
-      cursor: pointer;
-      img {
-        height: 30px;
-        &:hover {
-          transform: scale(110%);
-          transition: all 0.15s;
+      justify-content: space-between;
+      .job {
+        background-color: rgb(232, 232, 232);
+        border-radius: 0 10px 10px 0;
+        width: 60%;
+        padding-left: 1%;
+        h3 {
+          font-size: 2rem;
+          font-family: "Caveat";
+        }
+      }
+      .socialButtons {
+        background-color: rgb(232, 232, 232);
+        border-radius: 10px 0 0 10px;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15%;
+        cursor: pointer;
+        a {
+          height: 30px;
+        }
+        img {
+          height: 30px;
+          &:hover {
+            transform: scale(110%);
+            transition: all 0.15s;
+          }
         }
       }
     }
   }
   .about {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     gap: 10px;
-    p {
-      &:last-of-type {
-        width: 70%;
+    padding-left: 5%;
+    h4 {
+      font-size: 1.5rem;
+      align-self: flex-start;
+    }
+    .info-content {
+      display: flex;
+      align-items: flex-end;
+      height: 80%;
+      .text {
+        flex: 1;
+        text-align: end;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      img {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-left: 5%;
+    h4 {
+      font-size: 1.5rem;
+      align-self: flex-start;
+    }
+    .images {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 5%;
+      .nodeImg,
+      .gitImg {
+        filter: invert(98%) sepia(3%) saturate(996%) hue-rotate(180deg)
+          brightness(114%) contrast(100%);
       }
     }
   }
 }
-
-.lower-nav {
+.nav {
+  flex: 3;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   gap: 30px;
-  .skills {
-    display: flex;
-    gap: 15px;
-    img {
-      height: 30px;
-      &:hover {
-        transform: scale(110%);
-        transition: all 0.15s;
-      }
-    }
-  }
   .buttons {
     width: 90%;
     height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     justify-content: center;
     gap: 1%;
     button {
-      width: 15%;
-      height: 100%;
-      background-color: white;
+      background: none;
       outline: none;
-      border: 3px solid black;
+      border: none;
       border-radius: 12.5px;
       font-family: "Caveat", sans-serif;
       font-size: 1.5rem;
       cursor: pointer;
       transition: transform 0.2s;
       transition-timing-function: ease-in-out;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      width: 95%;
+      padding: 0 5% 0 5%;
       &:hover {
         transform: scale(103%);
+      }
+      img {
+        height: 30px;
       }
     }
     .active {
       background-color: rgb(23, 23, 23);
       color: white;
+      img {
+        filter: invert(98%) sepia(3%) saturate(996%) hue-rotate(180deg)
+          brightness(114%) contrast(100%);
+      }
     }
   }
 }
-
 // content styles
 .content {
-  margin-top: 30px;
-  padding: 10px;
+  flex: 10;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   width: 90%;
-  height: max-content;
+  height: 100vh;
   justify-self: center;
   gap: 35px;
-  .card {
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    overflow-y: hidden;
-    padding: 10px;
-    .card-nav {
-      width: 100%;
+  .left {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    height: 100vh;
+    gap: 10px;
+    .title {
+      grid-row: 1/2;
+      height: 20%;
+      background-color: rgb(30, 30, 30);
+      color: white;
+      justify-self: center;
+      width: 90%;
+      height: 100%;
+      border-radius: 0 0 20px 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      font-size: 2rem;
     }
-    img {
-      height: 150px;
-      border-radius: 25px;
-      border: 4px solid black;
-      transition: all 0.2s;
-      transition-timing-function: ease-in-out;
-      &:hover {
-        transform: scale(103%);
-      }
-    }
-    .sourceCodeModule {
-      margin-left: 5%;
-      width: 40%;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      img {
-        height: 20px;
-        border: none;
-      }
-      a {
-        text-decoration: none;
-      }
-      h4 {
-        color: black;
-      }
-      .rightImg {
-        height: 15px;
-      }
-      .rightImgAnimated {
-        animation: bounce 1s infinite;
-        animation-timing-function: linear;
-      }
-      @keyframes bounce {
-        0% {
-          transform: translateX(0);
-        }
-        25% {
-          transform: translateX(2.5px);
-        }
-        50% {
-          transform: translateX(5px);
-        }
-        75% {
-          transform: translateX(2.5px);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-    }
-    .info {
-      margin-right: 5%;
-      display: flex;
-      align-items: center;
-      img {
-        height: 20px;
-        border: none;
-        cursor: pointer;
-      }
-    }
-    .info-card {
-      position: relative;
-      width: 380px;
-      background-color: white;
-      border-radius: 20px;
-      border: 3px solid black;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transform: translateY(210px);
-      .tech-images {
+    .cards {
+      grid-row: 2/3;
+      overflow-y: scroll;
+      .card {
+        height: 170px;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        overflow-y: hidden;
+        padding: 10px;
+        .card-nav {
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
         img {
-          height: 30px;
-          border: none;
-          border-radius: 5px;
+          height: 120px;
+          border-radius: 25px;
+          border: 2px solid black;
+          transition: all 0.2s;
+          transition-timing-function: ease-in-out;
+          &:hover {
+            transform: scale(103%);
+          }
+        }
+        .sourceCodeModule {
+          margin-left: 5%;
+          width: 70%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-decoration: none;
+          img {
+            height: 20px;
+            border: none;
+          }
+          a {
+            text-decoration: none;
+          }
+          h4 {
+            color: black;
+          }
+          .rightImg {
+            height: 15px;
+          }
+          .rightImgAnimated {
+            animation: bounce 1s infinite;
+            animation-timing-function: linear;
+          }
+          @keyframes bounce {
+            0% {
+              transform: translateX(0);
+            }
+            25% {
+              transform: translateX(2.5px);
+            }
+            50% {
+              transform: translateX(5px);
+            }
+            75% {
+              transform: translateX(2.5px);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+        }
+        .info {
+          margin-right: 5%;
+          display: flex;
+          align-items: center;
+          img {
+            height: 20px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+        .info-card {
+          position: relative;
+          width: 75%;
+          background-color: white;
+          border-radius: 20px;
+          border: 3px solid black;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          transform: translateY(210px);
+          .tech-images {
+            display: flex;
+            justify-content: space-around;
+            img {
+              height: 30px;
+              border: none;
+              border-radius: 5px;
+            }
+          }
+        }
+        .hide {
+          display: none;
         }
       }
     }
-    .hide {
-      display: none;
+  }
+  .right {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+    height: 100vh;
+    gap: 10px;
+    .title {
+      grid-row: 2/3;
+      height: 20%;
+      background-color: rgb(30, 30, 30);
+      color: white;
+      justify-self: center;
+      width: 90%;
+      height: 100%;
+      border-radius: 20px 20px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
     }
-  }
-}
-
-/* Hero Stylings */
-
-.contact {
-  width: 60%;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  margin-top: 40px;
-  gap: 30px;
-  h1 {
-    font-size: 3rem;
-  }
-  h4 {
-    font-size: 2rem;
-  }
-
-  .heroButtons {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    button {
-      width: 50%;
-      height: 50px;
-      border-radius: 15px;
-      background-color: inherit;
-      border: 3px solid black;
-      &:active {
-        background-color: rgb(48, 182, 151);
-        color: white;
+    .cards {
+      grid-row: 1/2;
+      align-self: end;
+      overflow-y: scroll;
+      .card {
+        height: 170px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        overflow-y: hidden;
+        padding: 10px;
+        .card-nav {
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        img {
+          height: 120px;
+          border-radius: 25px;
+          border: 2px solid black;
+          transition: all 0.2s;
+          transition-timing-function: ease-in-out;
+          &:hover {
+            transform: scale(103%);
+          }
+        }
+        .sourceCodeModule {
+          margin-left: 5%;
+          width: 70%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-decoration: none;
+          img {
+            height: 20px;
+            border: none;
+          }
+          a {
+            text-decoration: none;
+          }
+          h4 {
+            color: black;
+          }
+          .rightImg {
+            height: 15px;
+          }
+          .rightImgAnimated {
+            animation: bounce 1s infinite;
+            animation-timing-function: linear;
+          }
+          @keyframes bounce {
+            0% {
+              transform: translateX(0);
+            }
+            25% {
+              transform: translateX(2.5px);
+            }
+            50% {
+              transform: translateX(5px);
+            }
+            75% {
+              transform: translateX(2.5px);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+        }
+        .info {
+          margin-right: 5%;
+          display: flex;
+          align-items: center;
+          img {
+            height: 20px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+        .info-card {
+          position: relative;
+          width: 75%;
+          background-color: white;
+          border-radius: 20px;
+          border: 3px solid black;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          transform: translateY(210px);
+          .tech-images {
+            display: flex;
+            justify-content: space-around;
+            img {
+              height: 30px;
+              border: none;
+              border-radius: 5px;
+            }
+          }
+        }
+        .hide {
+          display: none;
+        }
       }
     }
   }
 }
 
-@media only screen and (max-width: 1452px) {
-  .lower-nav {
-    button {
-      width: 20%;
-    }
-  }
+.mouseCursor {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background-color: rgba(185, 197, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.25s;
+}
+.mouseCursorFast {
+  transition: all 0.01s;
 }
 
 @media only screen and (max-width: 964px) {
-  .lower-nav {
-    button {
-      width: 25%;
-      font-size: 1.25rem;
-    }
+  #root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: colorchange 120s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    cursor: url("../assets/hand-point.png");
   }
-}
 
-@media only screen and (max-width: 500px) {
   /* Nav Stylings */
-  .nav {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: none;
-    gap: 20px;
-    padding: 10px;
-    width: 99%;
+  .header {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
     justify-self: center;
+    background-color: rgb(30, 30, 30);
+    box-shadow: 5px 5px 15px 1px rgba(30, 30, 30, 0.4);
+    color: white;
     img {
       cursor: pointer;
       height: 30px;
     }
     .info {
-      justify-self: flex-end;
-      border-right: none;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-end;
-      padding-left: 20px;
-      padding-right: 20px;
-      height: min-content;
+      align-items: flex-start;
+      color: rgb(30, 30, 30);
+      gap: 5px;
       .name {
-        text-align: center;
+        width: 100%;
+        padding-left: 1%;
+        background-color: rgb(232, 232, 232);
+        transform: skewY(-7deg);
         h3 {
           font-size: 3.5rem;
           margin-bottom: 5px;
@@ -352,90 +522,99 @@
           margin-bottom: 5px;
         }
       }
-      .socialButtons {
+      .lower {
+        width: 100%;
+        transform: skewY(-7deg);
         display: flex;
-        justify-content: center;
-        gap: 30px;
-        cursor: pointer;
-        img {
-          height: 30px;
-          &:hover {
-            transform: scale(110%);
-            transition: all 0.15s;
+        justify-content: space-between;
+        .job {
+          background-color: rgb(232, 232, 232);
+          border-radius: 0 10px 10px 0;
+          width: 55%;
+          padding-left: 1%;
+          h3 {
+            font-size: 1.5rem;
+            font-family: "Caveat";
+          }
+        }
+        .socialButtons {
+          background-color: rgb(232, 232, 232);
+          border-radius: 10px 0 0 10px;
+          width: 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 15%;
+          cursor: pointer;
+          a {
+            height: 25px;
+          }
+          img {
+            height: 25px;
+            &:hover {
+              transform: scale(110%);
+              transition: all 0.15s;
+            }
           }
         }
       }
     }
     .about {
       display: none;
-      flex-direction: column;
-      gap: 10px;
-      p {
-        &:last-of-type {
-          width: 70%;
-        }
-      }
-    }
-  }
-
-  .lower-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    .skills {
-      display: flex;
-      gap: 15px;
-      img {
-        height: 30px;
-        &:hover {
-          transform: scale(110%);
-          transition: all 0.15s;
-        }
-      }
-    }
-    .buttons {
-      width: 90%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 1%;
-      button {
-        width: 30%;
-        height: 100%;
-        background-color: white;
-        outline: none;
-        border: 3px solid black;
-        border-radius: 12.5px;
-        font-family: "Caveat", sans-serif;
+      h4 {
         font-size: 1.5rem;
-        cursor: pointer;
-        transition: transform 0.2s;
-        transition-timing-function: ease-in-out;
-        &:hover {
-          transform: scale(103%);
+        align-self: flex-start;
+      }
+      .info-content {
+        display: flex;
+        align-items: flex-end;
+        height: 80%;
+        .text {
+          flex: 1;
+          text-align: end;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        img {
+          flex: 1;
+          height: 100%;
+          width: 100%;
         }
       }
-      .active {
-        background-color: rgb(23, 23, 23);
-        color: white;
+    }
+    .skills {
+      display: none;
+      h4 {
+        font-size: 1.5rem;
+        align-self: flex-start;
+      }
+      .images {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        .nodeImg,
+        .gitImg {
+          filter: invert(98%) sepia(3%) saturate(996%) hue-rotate(180deg)
+            brightness(114%) contrast(100%);
+        }
       }
     }
   }
-
   // content styles
   .content {
-    margin-top: 30px;
+    flex: 10;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 90%;
-    height: max-content;
+    margin-top: 20px;
+    width: 100%;
+    height: 100vh;
     justify-self: center;
-    gap: 0;
+    gap: 35px;
     .card {
-      height: 200px;
+      height: 170px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -443,15 +622,15 @@
       overflow-y: hidden;
       padding: 10px;
       .card-nav {
-        width: 100%;
+        width: 70%;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
       img {
-        height: 110px;
-        border-radius: 15px;
-        border: 4px solid black;
+        height: 120px;
+        border-radius: 25px;
+        border: 2px solid black;
         transition: all 0.2s;
         transition-timing-function: ease-in-out;
         &:hover {
@@ -460,7 +639,7 @@
       }
       .sourceCodeModule {
         margin-left: 5%;
-        width: 60%;
+        width: 70%;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -512,7 +691,7 @@
       }
       .info-card {
         position: relative;
-        width: 100%;
+        width: 75%;
         background-color: white;
         border-radius: 20px;
         border: 3px solid black;
@@ -537,38 +716,40 @@
     }
   }
 
-  /* Hero Stylings */
+  .mouseCursor {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: rgba(185, 197, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.25s;
+  }
+  .mouseCursorFast {
+    transition: all 0.01s;
+  }
+}
 
-  .contact {
-    width: 60%;
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-top: 40px;
-    gap: 30px;
-    h1 {
-      font-size: 3rem;
-    }
-    h4 {
-      font-size: 2rem;
-    }
-
-    .heroButtons {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      button {
-        width: 50%;
-        height: 50px;
-        border-radius: 15px;
-        background-color: inherit;
-        border: 3px solid black;
-        &:active {
-          background-color: rgb(48, 182, 151);
-          color: white;
-        }
-      }
-    }
+@keyframes colorchange {
+  0% {
+    background: #ebebeb;
+  }
+  17% {
+    background: #defffa;
+  }
+  34% {
+    background: #d3f5fd;
+  }
+  51% {
+    background: #d0d9ff;
+  }
+  68% {
+    background: #d3f5fd;
+  }
+  85% {
+    background: #defffa;
+  }
+  100% {
+    background: #ebebeb;
   }
 }

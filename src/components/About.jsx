@@ -24,62 +24,67 @@ class About extends Component {
     const { showToastMessage } = this.props;
     return (
       <div className="skills">
-        <img
-          onClick={() => {
-            showToastMessage(this.state.js);
-          }}
-          src={js}
-          alt=""
-        />
-        <img
-          onClick={() => {
-            showToastMessage(this.state.react);
-          }}
-          src={reactimg}
-          alt=""
-        />
-        <img
-          onClick={() => {
-            showToastMessage(this.state.redux);
-          }}
-          src={reduximg}
-          alt=""
-        />
-        <img
-          onClick={() => {
-            showToastMessage(this.state.node);
-          }}
-          src={nodejs}
-          alt=""
-        />
-        <img
-          onClick={() => {
-            showToastMessage(this.state.sass);
-          }}
-          src={sass}
-          alt=""
-        />
-        <img
-          onClick={() => {
-            showToastMessage(this.state.ts);
-          }}
-          src={ts}
-          alt=""
-        />
-        <img
-          onClick={() => {
-            showToastMessage(this.state.git);
-          }}
-          src={git}
-          alt=""
-        />
-        <img
-          onClick={() => {
-            showToastMessage(this.state.csharp);
-          }}
-          src={python}
-          alt=""
-        />
+        <h4>My Tech Stack</h4>
+        <div className="images">
+          <img
+            onClick={() => {
+              showToastMessage(this.state.js);
+            }}
+            src={js}
+            alt=""
+          />
+          <img
+            onClick={() => {
+              showToastMessage(this.state.react);
+            }}
+            src={reactimg}
+            alt=""
+          />
+          <img
+            onClick={() => {
+              showToastMessage(this.state.redux);
+            }}
+            src={reduximg}
+            alt=""
+          />
+          <img
+            className="nodeImg"
+            onClick={() => {
+              showToastMessage(this.state.node);
+            }}
+            src={nodejs}
+            alt=""
+          />
+          <img
+            onClick={() => {
+              showToastMessage(this.state.sass);
+            }}
+            src={sass}
+            alt=""
+          />
+          <img
+            onClick={() => {
+              showToastMessage(this.state.ts);
+            }}
+            src={ts}
+            alt=""
+          />
+          <img
+            className="gitImg"
+            onClick={() => {
+              showToastMessage(this.state.git);
+            }}
+            src={git}
+            alt=""
+          />
+          <img
+            onClick={() => {
+              showToastMessage(this.state.csharp);
+            }}
+            src={python}
+            alt=""
+          />
+        </div>
       </div>
     );
   }
