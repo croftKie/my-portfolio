@@ -8,7 +8,7 @@ import sass from "../assets/sass.png";
 import nodejs from "../assets/node.png";
 import python from "../assets/python.png";
 
-class About extends Component {
+class Skills extends Component {
   state = {
     js: "ES6 Javascript for responsive front-end development",
     react:
@@ -90,4 +90,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default Skills;

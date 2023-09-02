@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import Card from "./Card";
-import surfer from "../assets/surfer.png";
-import clapper from "../assets/clapperboard.png";
-import cliTool from "../assets/cli-tool.png";
+import React, { Component, createRef } from "react";
+import surfer from "../assets/4.png";
+import clapper from "../assets/7.png";
+import cliTool from "../assets/5.png";
 import js from "../assets/js.png";
 import reactimg from "../assets/react.png";
 import git from "../assets/git.png";
@@ -10,13 +9,14 @@ import reduximg from "../assets/redux.png";
 import sass from "../assets/sass.png";
 import nodejs from "../assets/node.png";
 import python from "../assets/python.png";
-import be_a_coder from "../assets/be-a-coder-img.png";
-import codeventure from "../assets/codeventure.png";
-import pathAnimation from "../assets/path-animatior.png";
-import linkingPark from "../assets/LinkingPark.png";
-import croftest from "../assets/croftest.png";
+import be_a_coder from "../assets/8.png";
+import codeventure from "../assets/1.png";
+import pathAnimation from "../assets/6.png";
+import linkingPark from "../assets/2.png";
+import croftest from "../assets/3.png";
+import Card from "./Card";
 
-class Content extends Component {
+class Projects extends Component {
   state = {
     projects: [
       {
@@ -27,7 +27,7 @@ class Content extends Component {
         app_description:
           "Provides up-to-date wave height reports for any surf break in the world. JavaScript front-end with NodeJS proxy server providing API security. ",
         tech_used: [js, sass, nodejs],
-        type: "project",
+        type: "Project",
       },
       {
         img: codeventure,
@@ -37,7 +37,7 @@ class Content extends Component {
         app_description:
           "Learn to think like a coder with this retro game, built using React, and Redux, using custom connections to a third party game library, KaboomJS",
         tech_used: [reactimg, reduximg, sass, js],
-        type: "project",
+        type: "Project",
       },
       {
         img: linkingPark,
@@ -47,7 +47,7 @@ class Content extends Component {
         app_description:
           "A productivity app created in Vanilla JavaScript, with Bootstrap framework for styling and KaboomJS implementation for interactive element",
         tech_used: [js, sass, git],
-        type: "project",
+        type: "Project",
       },
       {
         img: cliTool,
@@ -58,7 +58,7 @@ class Content extends Component {
         app_description:
           "CLI Tool for quickly spinning up a React app with Github and Redux Toolkit functionality - over 1000 downloads on NPM",
         tech_used: [js, nodejs, git],
-        type: "package",
+        type: "Package",
       },
       {
         img: pathAnimation,
@@ -69,7 +69,7 @@ class Content extends Component {
         app_description:
           "JavaScript package extending GSAP capabilite to create controlled four directional animation with collision detection and event emition.",
         tech_used: [js, nodejs, git],
-        type: "package",
+        type: "Package",
       },
       {
         img: croftest,
@@ -79,7 +79,7 @@ class Content extends Component {
         app_description:
           "A stripped down unit testing framework for testing of in-browser code evaluation.",
         tech_used: [js, nodejs, git],
-        type: "package",
+        type: "Package",
       },
       {
         img: be_a_coder,
@@ -89,94 +89,61 @@ class Content extends Component {
         app_description:
           "A set of physics simulations to illustrate the life of a programmer building a piece of software. Uses MatterJS for 2d physics simulations.",
         tech_used: [js, git],
-        type: "project",
+        type: "Project",
       },
-      {
-        img: clapper,
-        live_link: "https://github.com/croftKie/secura-cam",
-        source_link: "https://github.com/croftKie/secura-cam",
-        app_name: "Secura-cam | Hacker Catcher",
-        app_description:
-          "Secure your computer. Uses key-press monitoring and webcam access to capture evidence of anyone tampering with your computer.",
-        tech_used: [python, git],
-        type: "project",
-      },
+      // {
+      //   img: clapper,
+      //   live_link: "https://github.com/croftKie/secura-cam",
+      //   source_link: "https://github.com/croftKie/secura-cam",
+      //   app_name: "Secura-cam | Hacker Catcher",
+      //   app_description:
+      //     "Secure your computer. Uses key-press monitoring and webcam access to capture evidence of anyone tampering with your computer.",
+      //   tech_used: [python, git],
+      //   type: "project",
+      // },
     ],
+    currentProject: 0,
+  };
+
+  sidebarRef = createRef();
+
+  projectChange = (projectIndex) => {
+    this.setState({ currentProject: projectIndex });
+  };
+
+  activeSelector = (e) => {
+    if (e.target.nodeName === "DIV") {
+      Array.from(this.sidebarRef.current.children).map((child) => {
+        child.classList.remove("active");
+      });
+      e.target.classList.add("active");
+    }
   };
 
   render() {
-    const mobileCheck = window.innerWidth;
-
-    const desktop = (
-      <>
-        {" "}
-        <div className="left">
-          <div className="title">
-            <h4>Projects</h4>
-          </div>
-          <div className="cards">
-            {this.state.projects.map((item) => {
-              if (item.type === "project") {
-                return (
-                  <Card
-                    source_link={item.source_link}
-                    live_link={item.live_link}
-                    img={item.img}
-                    app_name={item.app_name}
-                    app_description={item.app_description}
-                    tech_used={item.tech_used}
-                  />
-                );
-              }
-            })}
-          </div>
-        </div>
-        <div className="right">
-          <div className="cards">
-            {this.state.projects.map((item) => {
-              if (item.type === "package") {
-                return (
-                  <Card
-                    source_link={item.source_link}
-                    live_link={item.live_link}
-                    img={item.img}
-                    app_name={item.app_name}
-                    app_description={item.app_description}
-                    tech_used={item.tech_used}
-                  />
-                );
-              }
-            })}
-          </div>
-          <div className="title">
-            <h4>Packages</h4>
-          </div>
-        </div>
-      </>
-    );
-
-    const mobile = (
-      <>
-        {this.state.projects.map((item) => {
-          return (
-            <Card
-              source_link={item.source_link}
-              live_link={item.live_link}
-              img={item.img}
-              app_name={item.app_name}
-              app_description={item.app_description}
-              tech_used={item.tech_used}
-            />
-          );
-        })}
-      </>
-    );
-
-    console.log(mobileCheck);
     return (
-      <div className="content">{mobileCheck > 900 ? desktop : mobile}</div>
+      <div className="projects">
+        <div ref={this.sidebarRef} className="sidebar-projects">
+          {this.state.projects.map((project, index) => {
+            return (
+              <div
+                onClick={(e) => {
+                  this.projectChange(index);
+                  this.activeSelector(e);
+                }}
+                className={index === 0 ? "item active" : "item"}
+              >
+                <p>{project.app_name}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="content-projects">
+          <Card project={this.state.projects[this.state.currentProject]} />
+        </div>
+      </div>
     );
   }
 }
 
-export default Content;
+export default Projects;
