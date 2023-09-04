@@ -51,6 +51,16 @@ class Who extends Component {
         ],
       },
       {
+        type: "Python",
+        details: [
+          "Scripting",
+          "Automation",
+          "HTTP Routing",
+          "Data exploration and cleaning",
+          "Django Web Development",
+        ],
+      },
+      {
         type: "HTML5/CSS3",
         details: [
           "Semantically correct HTML for accessibility and SEO",
@@ -151,7 +161,7 @@ class Who extends Component {
                 this.activeSelector(e);
               }}
             >
-              HTML5/CSS3
+              Python
             </p>
             <p
               onClick={(e) => {
@@ -159,11 +169,19 @@ class Who extends Component {
                 this.activeSelector(e);
               }}
             >
-              Testing
+              HTML5/CSS3
             </p>
             <p
               onClick={(e) => {
                 this.setCurrentSkill(6);
+                this.activeSelector(e);
+              }}
+            >
+              Testing
+            </p>
+            <p
+              onClick={(e) => {
+                this.setCurrentSkill(7);
                 this.activeSelector(e);
               }}
             >

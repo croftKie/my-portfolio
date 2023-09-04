@@ -1,6 +1,6 @@
 import React, { Component, createRef } from "react";
 import surfer from "../assets/4.png";
-import clapper from "../assets/7.png";
+import luna from "../assets/luna.png";
 import cliTool from "../assets/5.png";
 import js from "../assets/js.png";
 import reactimg from "../assets/react.png";
@@ -85,22 +85,23 @@ class Projects extends Component {
         img: be_a_coder,
         live_link: "https://croftkie.github.io/be-a-coder/",
         source_link: "https://github.com/croftKie/be-a-coder",
-        app_name: "Be-A-Coder | MatterJS",
+        app_name: "Coder Therapy | MatterJS",
         app_description:
-          "A set of physics simulations to illustrate the life of a programmer building a piece of software. Uses MatterJS for 2d physics simulations.",
+          "A set of physics simulations for coders to use to relax a little after bug hunting all day. Uses MatterJS for 2d physics simulations.",
         tech_used: [js, git],
         type: "Project",
       },
-      // {
-      //   img: clapper,
-      //   live_link: "https://github.com/croftKie/secura-cam",
-      //   source_link: "https://github.com/croftKie/secura-cam",
-      //   app_name: "Secura-cam | Hacker Catcher",
-      //   app_description:
-      //     "Secure your computer. Uses key-press monitoring and webcam access to capture evidence of anyone tampering with your computer.",
-      //   tech_used: [python, git],
-      //   type: "project",
-      // },
+      {
+        img: luna,
+        live_link: "https://github.com/croftKie/luna-assistant",
+        source_link:
+          "https://github.com/croftKie/luna-assistant/blob/main/app.py",
+        app_name: "Luna | Personal Voice Assistant",
+        app_description:
+          "Luna can help you manage tasks, open websites and tab groups for you and much more. Written in Python and using only open-source code and a handful of modules to provide a voice assistant that you can modify to your needs.",
+        tech_used: [python, git],
+        type: "project",
+      },
     ],
     currentProject: 0,
   };
