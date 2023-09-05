@@ -25,28 +25,8 @@ class Projects extends Component {
         source_link: "https://github.com/croftKie/surf-report-live",
         app_name: "Surfer | Wave Reports",
         app_description:
-          "Provides up-to-date wave height reports for any surf break in the world. JavaScript front-end with NodeJS proxy server providing API security. ",
+          "Provides up-to-date wave height, speed and interval reports for any surf break in the world. JavaScript front-end with NodeJS proxy server providing API security and user authentication/database query routing",
         tech_used: [js, sass, nodejs],
-        type: "Project",
-      },
-      {
-        img: codeventure,
-        live_link: "https://croftkie.github.io/coding-adventure/",
-        source_link: "https://github.com/croftKie/coding-adventure",
-        app_name: "CodeVenture - Coding Puzzles",
-        app_description:
-          "Learn to think like a coder with this retro game, built using React, and Redux, using custom connections to a third party game library, KaboomJS",
-        tech_used: [reactimg, reduximg, sass, js],
-        type: "Project",
-      },
-      {
-        img: linkingPark,
-        live_link: "https://croftkie.github.io/linking-park/",
-        source_link: "https://github.com/croftKie/linking-park",
-        app_name: "LinkingPark | Tab Manager",
-        app_description:
-          "A productivity app created in Vanilla JavaScript, with Bootstrap framework for styling and KaboomJS implementation for interactive element",
-        tech_used: [js, sass, git],
         type: "Project",
       },
       {
@@ -56,39 +36,18 @@ class Projects extends Component {
           "https://www.npmjs.com/package/quick-react-app-builder?activeTab=code",
         app_name: "React App Builder | CLI Tool",
         app_description:
-          "CLI Tool for quickly spinning up a React app with Github and Redux Toolkit functionality - over 1000 downloads on NPM",
+          "CLI for creating a React Application skeleton with the possibility to include Redux, Router, and GitHub Repo integration. Written using NodeJS and file system manipulation.",
         tech_used: [js, nodejs, git],
         type: "Package",
       },
       {
-        img: pathAnimation,
-        live_link: "https://www.npmjs.com/package/directional-path-animator",
-        source_link:
-          "https://www.npmjs.com/package/directional-path-animator?activeTab=code",
-        app_name: "Four Directional Path Animator",
+        img: linkingPark,
+        live_link: "https://croftkie.github.io/linking-park/",
+        source_link: "https://github.com/croftKie/linking-park",
+        app_name: "LinkingPark | Tab Manager",
         app_description:
-          "JavaScript package extending GSAP capabilite to create controlled four directional animation with collision detection and event emition.",
-        tech_used: [js, nodejs, git],
-        type: "Package",
-      },
-      {
-        img: croftest,
-        live_link: "https://www.npmjs.com/package/croftest",
-        source_link: "https://www.npmjs.com/package/croftest?activeTab=code",
-        app_name: "Croftest | In-browser Unit Testing",
-        app_description:
-          "A stripped down unit testing framework for testing of in-browser code evaluation.",
-        tech_used: [js, nodejs, git],
-        type: "Package",
-      },
-      {
-        img: be_a_coder,
-        live_link: "https://croftkie.github.io/be-a-coder/",
-        source_link: "https://github.com/croftKie/be-a-coder",
-        app_name: "Coder Therapy | MatterJS",
-        app_description:
-          "A set of physics simulations for coders to use to relax a little after bug hunting all day. Uses MatterJS for 2d physics simulations.",
-        tech_used: [js, git],
+          "A productivity app created in React with TypeScript, using KaboomJS for HTML canvas interactivity. Used as an immersive browser tab manager.",
+        tech_used: [js, sass, git],
         type: "Project",
       },
       {
@@ -101,6 +60,47 @@ class Projects extends Component {
           "Luna can help you manage tasks, open websites and tab groups for you and much more. Written in Python and using only open-source code and a handful of modules to provide a voice assistant that you can modify to your needs.",
         tech_used: [python, git],
         type: "project",
+      },
+      {
+        img: codeventure,
+        live_link: "https://croftkie.github.io/coding-adventure/",
+        source_link: "https://github.com/croftKie/coding-adventure",
+        app_name: "CodeVenture - Coding Puzzles",
+        app_description:
+          "Learn to think like a coder with this retro puzzle app, built using React with Redux for state management and TauriJS to allow for desktop executable creation.",
+        tech_used: [reactimg, reduximg, sass, js],
+        type: "Project",
+      },
+      {
+        img: pathAnimation,
+        live_link: "https://www.npmjs.com/package/directional-path-animator",
+        source_link:
+          "https://www.npmjs.com/package/directional-path-animator?activeTab=code",
+        app_name: "Four Directional Path Animator",
+        app_description:
+          "JavaScript package extending GSAP capability to create controlled four directional animation of elements with collision detection and event emition.",
+        tech_used: [js, nodejs, git],
+        type: "Package",
+      },
+      {
+        img: croftest,
+        live_link: "https://www.npmjs.com/package/croftest",
+        source_link: "https://www.npmjs.com/package/croftest?activeTab=code",
+        app_name: "Croftest | In-browser Unit Testing",
+        app_description:
+          "A code evaluation and testing library, being used within CodeVenture for function evaluation. Performs central tests of platforms such as Jest. Use cases could include performing comparision tests on languages.",
+        tech_used: [js, nodejs, git],
+        type: "Package",
+      },
+      {
+        img: be_a_coder,
+        live_link: "https://croftkie.github.io/be-a-coder/",
+        source_link: "https://github.com/croftKie/be-a-coder",
+        app_name: "Coder Therapy | MatterJS",
+        app_description:
+          "A set of physics simulations built using MatterJS for 2d physics simulation and Bootstrap for modular front-end styling.",
+        tech_used: [js, git],
+        type: "Project",
       },
     ],
     currentProject: 0,
