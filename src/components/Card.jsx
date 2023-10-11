@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
-import codeventure from "../assets/1.png";
 
 class Card extends Component {
   state = {
@@ -24,7 +23,7 @@ class Card extends Component {
           <div className="item">
             <h4 className="subtitle">TECH USED:</h4>
             {project.tech_used.map((tech) => {
-              return <img src={tech} />;
+              return <p>{tech}</p>;
             })}
           </div>
         </div>

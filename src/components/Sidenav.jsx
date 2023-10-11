@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import gsap from "gsap";
 
 class Sidenav extends Component {
   sidebarRef = createRef();
@@ -11,6 +12,15 @@ class Sidenav extends Component {
       e.target.classList.add("active");
     }
   };
+
+  componentDidMount() {
+    gsap.to(this.sidebarRef.current, {
+      opacity: 1,
+      duration: 1,
+      ease: "bounce.inOut",
+      delay: 0.5,
+    });
+  }
 
   render() {
     return (
@@ -40,7 +50,7 @@ class Sidenav extends Component {
           }}
           className="item contact"
         >
-          <h4>Contact Me</h4>
+          <h4>Read my CV</h4>
         </div>
       </div>
     );

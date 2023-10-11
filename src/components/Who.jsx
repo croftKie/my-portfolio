@@ -1,5 +1,4 @@
 import React, { Component, createRef } from "react";
-import Skills from "./Skills";
 
 import me from "../assets/me.svg";
 
@@ -51,16 +50,6 @@ class Who extends Component {
         ],
       },
       {
-        type: "Python",
-        details: [
-          "Scripting",
-          "Automation",
-          "HTTP Routing",
-          "Data exploration and cleaning",
-          "Django Web Development",
-        ],
-      },
-      {
         type: "HTML5/CSS3",
         details: [
           "Semantically correct HTML for accessibility and SEO",
@@ -109,10 +98,12 @@ class Who extends Component {
         <div className="hero">
           <div className="text">
             <p className="title">Hi, I'm Kieran.</p>
-            <p>I'm an Engineer working in Full Stack Web Development.</p>
             <p>
-              Currently, I'm writing in TypeScript and specialising in ReactJS
-              and NodeJS.
+              I'm an Software Developer working in Full Stack Web Development.
+            </p>
+            <p>
+              Specialising in the JavaScript ecosystem, particularly ReactJS and
+              NodeJS development using Typescript.
             </p>
             <p>
               Open source advocate and maintain a portfolio of packages on NPM.
@@ -161,7 +152,7 @@ class Who extends Component {
                 this.activeSelector(e);
               }}
             >
-              Python
+              HTML5/CSS3
             </p>
             <p
               onClick={(e) => {
@@ -169,7 +160,7 @@ class Who extends Component {
                 this.activeSelector(e);
               }}
             >
-              HTML5/CSS3
+              Testing
             </p>
             <p
               onClick={(e) => {
@@ -177,15 +168,7 @@ class Who extends Component {
                 this.activeSelector(e);
               }}
             >
-              Testing
-            </p>
-            <p
-              onClick={(e) => {
-                this.setCurrentSkill(7);
-                this.activeSelector(e);
-              }}
-            >
-              Databases
+              Database
             </p>
           </div>
           <div className="details"></div>
