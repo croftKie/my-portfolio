@@ -1,15 +1,18 @@
 import React, { Component, createRef } from "react";
-import Nav from "./components/Nav";
-import { mouseMove } from "./utils/mouseMove";
-import "./css/App.css";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+import { mouseMove } from "./utils/mouseMove";
+
+import Nav from "./components/Nav";
 import Sidenav from "./components/Sidenav";
 import Who from "./components/Who";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Entry from "./components/Entry";
+
+import "react-toastify/dist/ReactToastify.css";
 import gsap from "gsap";
+import "./css/App.css";
 
 class App extends Component {
   state = {
@@ -48,6 +51,7 @@ class App extends Component {
     });
     tl.play();
   }
+
   componentDidMount() {
     const tl = gsap.timeline();
     tl.to(this.projects.current, {
@@ -66,6 +70,33 @@ class App extends Component {
   }
 
   render() {
+    const runAnims = () => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        this.projects.current,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "bounce.inOut",
+        }
+      );
+      tl.fromTo(
+        this.detailsBar.current,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.75,
+          ease: "bounce.inOut",
+        }
+      );
+      tl.play();
+    };
+
     window.addEventListener("mousemove", (event) => {
       mouseMove(event, this.mouseCursor.current);
     });
@@ -74,7 +105,11 @@ class App extends Component {
       <>
         <Nav showToastMessage={this.showToastMessage} />
         <div className="container" style={{ height: "95%", width: "95%" }}>
-          <Sidenav sidenav={this.sidenav} onModeChange={this.onModeChange} />
+          <Sidenav
+            runAnims={runAnims}
+            sidenav={this.sidenav}
+            onModeChange={this.onModeChange}
+          />
           <div ref={this.detailsBar} className="details">
             <div
               className={

@@ -27,6 +27,7 @@ class Sidenav extends Component {
       <div ref={this.sidebarRef} className="sidenav">
         <div
           onClick={(e) => {
+            this.props.runAnims();
             this.props.onModeChange(0);
             this.activeSelector(e);
           }}
@@ -36,6 +37,7 @@ class Sidenav extends Component {
         </div>
         <div
           onClick={(e) => {
+            this.props.runAnims();
             this.props.onModeChange(1);
             this.activeSelector(e);
           }}
@@ -45,6 +47,7 @@ class Sidenav extends Component {
         </div>
         <div
           onClick={(e) => {
+            this.props.runAnims();
             this.props.onModeChange(2);
             this.activeSelector(e);
           }}
