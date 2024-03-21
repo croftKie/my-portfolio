@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./css/app.css";
 import ts from "./assets/icons/typescript.png";
 import react from "./assets/icons/physics.png";
 import sql from "./assets/icons/sql-server.png";
 import kotlin from "./assets/icons/kotlin.png";
 import android from "./assets/icons/android.png";
+
+import logo from "./assets/logo.png";
+
+import gsap from "gsap";
 
 function App() {
   const [page, setPage] = useState(0);
@@ -19,6 +23,9 @@ function App() {
 
 function WebDev({ setPage }) {
   const [mode, setMode] = useState(0);
+  const navRef = useRef();
+  const contentRef = useRef();
+  const lineRef = useRef();
 
   const About = () => {
     return (
@@ -137,11 +144,77 @@ function WebDev({ setPage }) {
     );
   };
 
+  const animIn = () => {
+    gsap.to(navRef.current, { translateY: 0, duration: 1, ease: "bounce.out" });
+    gsap.to(contentRef.current, {
+      translateX: 0,
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(lineRef.current, {
+      translateX: 0,
+      duration: 1.25,
+      ease: "bounce.out",
+    });
+  };
+  const animOut = (page) => {
+    gsap.to(navRef.current, {
+      translateY: "-100px",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(contentRef.current, {
+      translateX: "1600px",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(lineRef.current, {
+      translateX: "1600px",
+      duration: 1.25,
+      ease: "bounce.out",
+      onComplete: () => setPage(page),
+    });
+  };
+
+  useEffect(() => {
+    animIn();
+  });
+
+  if (window.innerWidth <= 600) {
+    return (
+      <div className="web-dev">
+        <nav ref={navRef}>
+          <h4 onClick={() => animOut(0)} className="brand">
+            <img src={logo} alt="" />
+          </h4>
+          <div className="options">
+            <h5 className="active">Web Dev</h5>
+            <h5 onClick={() => animOut(2)}>App Dev</h5>
+          </div>
+        </nav>
+        <div ref={contentRef} className="content">
+          {mode === 0 ? <About /> : mode === 1 ? <Projects /> : <GetInTouch />}
+        </div>
+        <div className="menu">
+          <h4 onClick={() => setMode(0)} className={mode === 0 ? "active" : ""}>
+            About
+          </h4>
+          <h4 onClick={() => setMode(1)} className={mode === 1 ? "active" : ""}>
+            Projects
+          </h4>
+          <h4 onClick={() => setMode(2)} className={mode === 2 ? "active" : ""}>
+            Get In Touch
+          </h4>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="web-dev">
-      <nav>
-        <h4 onClick={() => setPage(0)} className="brand">
-          Croft Studio
+      <nav ref={navRef}>
+        <h4 onClick={() => animOut(0)} className="brand">
+          <img src={logo} alt="" />
         </h4>
         <div className="menu">
           <h4 onClick={() => setMode(0)} className={mode === 0 ? "active" : ""}>
@@ -156,7 +229,7 @@ function WebDev({ setPage }) {
         </div>
         <div className="options">
           <h5 className="active">Web Dev</h5>
-          <h5 onClick={() => setPage(2)}>App Dev</h5>
+          <h5 onClick={() => animOut(2)}>App Dev</h5>
         </div>
       </nav>
       <div
@@ -167,8 +240,9 @@ function WebDev({ setPage }) {
             ? "line margin-projects"
             : "line margin-contact"
         }
+        ref={lineRef}
       ></div>
-      <div className="content">
+      <div ref={contentRef} className="content">
         {mode === 0 ? <About /> : mode === 1 ? <Projects /> : <GetInTouch />}
       </div>
     </div>
@@ -177,6 +251,9 @@ function WebDev({ setPage }) {
 
 function AppDev({ setPage }) {
   const [mode, setMode] = useState(0);
+  const navRef = useRef();
+  const contentRef = useRef();
+  const lineRef = useRef();
 
   const About = () => {
     return (
@@ -206,7 +283,9 @@ function AppDev({ setPage }) {
         </div>
         <h2>My Experience</h2>
         <p>
-          I've worked with a range of clients, developing a complex companion app for an ed-tech startup. As well as a creative, art generation tool for Android and a surf data application.
+          I've worked with a range of clients, developing a complex companion
+          app for an ed-tech startup. As well as a creative, art generation tool
+          for Android and a surf data application.
         </p>
         <div className="clients">
           <div className="card">
@@ -294,10 +373,77 @@ function AppDev({ setPage }) {
     );
   };
 
+  const animIn = () => {
+    gsap.to(navRef.current, { translateY: 0, duration: 1, ease: "bounce.out" });
+    gsap.to(contentRef.current, {
+      translateX: 0,
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(lineRef.current, {
+      translateX: 0,
+      duration: 1.25,
+      ease: "bounce.out",
+    });
+  };
+
+  const animOut = (page) => {
+    gsap.to(navRef.current, {
+      translateY: "-100px",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(contentRef.current, {
+      translateX: "-850px",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(lineRef.current, {
+      translateX: "-850px",
+      duration: 1.25,
+      ease: "bounce.out",
+      onComplete: () => setPage(page),
+    });
+  };
+
+  useEffect(() => {
+    animIn();
+  });
+
+  if (window.innerWidth <= 600) {
+    return (
+      <div className="app-dev">
+        <nav ref={navRef}>
+          <h4 onClick={() => animOut(0)} className="brand">
+            <img src={logo} alt="" />
+          </h4>
+          <div className="options">
+            <h5 onClick={() => animOut(1)}>Web Dev</h5>
+            <h5 className="active">App Dev</h5>
+          </div>
+        </nav>
+        <div ref={contentRef} className="content">
+          {mode === 0 ? <About /> : mode === 1 ? <Projects /> : <GetInTouch />}
+        </div>
+        <div className="menu">
+          <h4 onClick={() => setMode(0)} className={mode === 0 ? "active" : ""}>
+            About
+          </h4>
+          <h4 onClick={() => setMode(1)} className={mode === 1 ? "active" : ""}>
+            Projects
+          </h4>
+          <h4 onClick={() => setMode(2)} className={mode === 2 ? "active" : ""}>
+            Get In Touch
+          </h4>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="app-dev">
-      <nav>
-        <h4 onClick={() => setPage(0)} className="brand">
+      <nav ref={navRef}>
+        <h4 onClick={() => animOut(0)} className="brand">
           Croft Studio
         </h4>
         <div className="menu">
@@ -312,11 +458,12 @@ function AppDev({ setPage }) {
           </h4>
         </div>
         <div className="options">
-          <h5 onClick={() => setPage(1)}>Web Dev</h5>
+          <h5 onClick={() => animOut(1)}>Web Dev</h5>
           <h5 className="active">App Dev</h5>
         </div>
       </nav>
       <div
+        ref={lineRef}
         className={
           mode === 0
             ? "line margin-about"
@@ -325,7 +472,7 @@ function AppDev({ setPage }) {
             : "line margin-contact"
         }
       ></div>
-      <div className="content">
+      <div ref={contentRef} className="content">
         {mode === 0 ? <About /> : mode === 1 ? <Projects /> : <GetInTouch />}
       </div>
     </div>
@@ -333,25 +480,97 @@ function AppDev({ setPage }) {
 }
 
 function Entry({ setPage }) {
+  const infoRef = useRef();
+  const optionUpper = useRef();
+  const optionMid = useRef();
+  const optionLower = useRef();
+  const appRef = useRef();
+  const webRef = useRef();
+
+  const animIn = () => {
+    gsap.to(infoRef.current, {
+      translateX: "0",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(optionUpper.current, {
+      translateY: "0",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(optionMid.current, {
+      translateX: "0",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(optionLower.current, {
+      translateY: "0",
+      duration: 1,
+      ease: "bounce.out",
+    });
+  };
+  const animOut = (page) => {
+    gsap.to(infoRef.current, {
+      translateX: "-850px",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(optionUpper.current, {
+      translateY: "-300px",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(optionMid.current, {
+      translateX: "750px",
+      duration: 1,
+      ease: "bounce.out",
+    });
+    gsap.to(optionLower.current, {
+      translateY: "300px",
+      duration: 1,
+      ease: "bounce.out",
+      onComplete: () => setPage(page),
+    });
+  };
+  const increaseScale = (ref) => {
+    gsap.to(ref, { scale: 1.1, duration: 0.25, ease: "power3.out" });
+  };
+  const decreaseScale = (ref) => {
+    gsap.to(ref, { scale: 1, duration: 0.25, ease: "power3.out" });
+  };
+
+  useEffect(() => {
+    animIn();
+  });
+
   return (
     <section className="entry">
-      <div className="col info">
-        <h3>Hi, I'm Kieran...</h3>
+      <div ref={infoRef} className="col info">
+        <h3>Hi, I'm Kieran!</h3>
         <h1>Welcome to Croft Studio</h1>
-        <h5>
-          ...I specialise in Kotlin & React Native App Dev and ReactJS for Web
-          Dev
-        </h5>
+        <h5>A bespoke development studio</h5>
       </div>
       <div className="col grid">
-        <div onClick={() => setPage(2)} className="item option">
-          <h3>Mobile App Development</h3>
+        <div
+          ref={optionUpper}
+          onClick={() => animOut(2)}
+          onMouseEnter={() => increaseScale(appRef.current)}
+          onMouseLeave={() => decreaseScale(appRef.current)}
+          className="item option"
+        >
+          <h3 ref={appRef}>Mobile App Development</h3>
         </div>
-        <div className="item">
+        <div ref={optionMid} className="item">
           <h3>What do you need?</h3>
         </div>
-        <div onClick={() => setPage(1)} className="item option">
-          <h3>Web App Development</h3>
+        <div
+          ref={optionLower}
+          onClick={() => animOut(1)}
+          onMouseEnter={() => increaseScale(webRef.current)}
+          onMouseLeave={() => decreaseScale(webRef.current)}
+          className="item option"
+        >
+          <h3 ref={webRef}>Web App Development</h3>
         </div>
       </div>
     </section>
